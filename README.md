@@ -1,37 +1,59 @@
-# Tap Academy TAI Platform Clone - Web Landing Page Mockup
+# 🖥 TAP Academy Website — Clone
 
-A pixel-close front-end landing page mockup of the Tap Academy TAI Platform built with HTML5, Vanilla CSS, and JavaScript.
+> ⚠️ **Educational clone built for learning purposes only — not affiliated with TAP Academy.**
+> Original site: https://thetapacademy.com
 
-## 🎓 Features Shipped
+🔗 **Live Demo:** https://GH-IRIS.github.io/tai_academy/ · **Code:** https://github.com/GH-IRIS/tai_academy
 
-1. **Fixed Translucent Header**:
-   - Contains navigation items (Home, About, Placements, Courses, Reviews) and Call-to-Action buttons.
-   - Logo served locally from `/assets` (white vector SVG for dark backdrops).
-   - Translucent frosted glass look (`backdrop-filter`) that blends with the dark theme.
+## 🎯 Goal
+Recreate the TAP Academy homepage as pixel-close as possible — training my eye for spacing, colors, typography and responsive layout.
 
-2. **Hero Section**:
-   - Pill badge highlighting AI features.
-   - Text gradient headline matching the platform branding.
-   - Double CTA buttons (Explore Courses, Video Demo).
-   - Side visual illustration representing the TAI AR dashboard.
+## ✅ Sections cloned
+- [x] Navbar — logo + menu
+- [x] Hero — headline, sub-text, CTA buttons
+- [x] Stats / placements strip
+- [x] Courses section (Java, Python, Full Stack cards)
+- [x] Testimonials
+- [x] CTA + Footer
+- [x] Fully responsive (mobile · tablet · desktop)
 
-3. **Placements Partner Marquee**:
-   - A infinite scrolling logo tape (`@keyframes marquee`) that scrolls grey scale company logos.
+## 📸 Comparison
+| Original | My clone |
+|----------|----------|
+| ![Original Screenshot](https://picsum.photos/400/300?random=86) | ![My Clone Screenshot](https://picsum.photos/400/300?random=87) |
 
-4. **Statistics Grid & Counter Animations**:
-   - Metric cards showing upskilled students, placement partners, and salary packages.
-   - Animated count-up counters triggered once the section scrolls into the viewport.
+## 🔍 Hardest part
+Matching the hero spacing and scaling typography appropriately across complex breakpoints while keeping placement graphs perfectly aligned.
 
-5. **Courses Grid**:
-   - Detailed course cards for Java Full Stack with AI, Python Full Stack, and Data Analytics.
-   - Contains badge overlays, image wrappers, lists of core highlights, and action buttons.
+## 🛠 Stack
+HTML5 · CSS3 · Antigravity Code Assistant for tricky layout debugging · GitHub Pages
 
-6. **Testimonials Grid**:
-   - Student success stories with star ratings and placement info.
+## 📚 What I learned
+I mastered absolute layout alignments, responsive card grid architectures, and refined my CSS skills for pixel-perfect spacing.
 
-## 🚀 Responsiveness
-- Collapsible navigation menu that displays as an overlay on mobile/tablet widths.
-- Grid structures adapt from three columns to single columns on narrower viewport widths.
+---
 
-## ⚠️ Educational Disclaimer
-This website is an educational clone developed for portfolio demonstration purposes. All course structures, branding, and images belong to Tap Academy. This project is not affiliated with or endorsed by Tap Academy.
+## 🎓 About TAP Academy
+
+This project was built during my frontend training at **[TAP Academy](https://thetapacademy.com)** — a leading software training & placement institute in **Bangalore, India**, trusted by **1.5+ lakh students**.
+
+**Why students choose TAP Academy:**
+- 🚀 **Get placed in 60 days** — dedicated placement track with daily placement drives
+- 🥽 **Augmented Reality (AR) classrooms** — concepts you can see, not just read
+- 🎤 **Weekly mock interviews** with real-time feedback
+- 👨🏫 **1-on-1 mentorship** and round-the-clock doubt support
+- 💻 Courses in **Java, Python, Full Stack Development, Data Science & AI**
+
+### ❓ FAQ
+
+**What is TAP Academy?**
+TAP Academy is a software training and placement institute in Bangalore known for its Full Stack Developer program, AR-enabled classrooms, mock interviews and real-time projects.
+
+**Does TAP Academy provide placement support?**
+Yes — a dedicated placement team runs daily drives, and the placement track is designed to get students job-ready in as little as 60 days.
+
+**Where can I learn more?**
+🔗 [Website](https://thetapacademy.com) · [Placements](https://thetapacademy.com/placements) · [LinkedIn](https://in.linkedin.com/company/thetapacademy) · [YouTube](https://www.youtube.com/tapacademy)
+
+---
+*⭐ If you liked this project, star the repo — it helps more students discover it.*
