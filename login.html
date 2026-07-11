@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TAI Platform Student Login Page - Educational Clone.">
+    <title>Sign In | TAI Platform</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-base: #06060c;
+            --bg-card: #0e0e18;
+            --border-color: #1e2035;
+            --text-primary: #ffffff;
+            --text-secondary: #9aa0b9;
+            --accent-blue: #0056ff;
+            --accent-cyan: #00e1ff;
+            --accent-gradient: linear-gradient(135deg, #0056ff 0%, #00e1ff 100%);
+            --font-sans: 'Inter', sans-serif;
+            --font-display: 'Space Grotesk', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-base);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            overflow: hidden;
+        }
+
+        /* Split Layout */
+        .login-container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Left Illustration Panel */
+        .illustration-panel {
+            flex: 1.1;
+            background-color: #040409;
+            background-image: radial-gradient(circle at 30% 30%, rgba(0, 86, 255, 0.15), transparent 70%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 48px;
+            position: relative;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .auth-image {
+            max-width: 80%;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.6));
+            animation: floatImage 6s ease-in-out infinite;
+        }
+
+        @keyframes floatImage {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .quote-box {
+            margin-top: 40px;
+            text-align: center;
+            max-width: 480px;
+        }
+
+        .quote-text {
+            font-family: var(--font-display);
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 1.4;
+            margin-bottom: 12px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .quote-author {
+            color: var(--text-secondary);
+            font-size: 13.5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Right Form Panel */
+        .form-panel {
+            flex: 0.9;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 60px;
+            overflow-y: auto;
+            background-color: var(--bg-base);
+        }
+
+        .form-wrapper {
+            max-width: 420px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .brand-logo-row {
+            margin-bottom: 40px;
+        }
+
+        .brand-logo {
+            height: 44px;
+        }
+
+        .form-header {
+            margin-bottom: 32px;
+        }
+
+        .form-header h1 {
+            font-family: var(--font-display);
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .form-header p {
+            color: var(--text-secondary);
+            font-size: 14.5px;
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-label {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-field {
+            width: 100%;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px 16px;
+            color: var(--text-primary);
+            font-family: inherit;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .input-field:focus {
+            border-color: var(--accent-blue);
+            box-shadow: 0 0 0 3px rgba(0, 86, 255, 0.15);
+        }
+
+        /* Password eye icon */
+        .password-toggle-btn {
+            position: absolute;
+            right: 16px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .password-toggle-btn:hover {
+            color: var(--text-primary);
+        }
+
+        /* Extras row */
+        .extras-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 32px;
+            font-size: 13.5px;
+        }
+
+        .remember-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        .remember-checkbox input {
+            cursor: pointer;
+            accent-color: var(--accent-blue);
+        }
+
+        .forgot-link {
+            color: var(--accent-cyan);
+            font-weight: 600;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Submit Button */
+        .btn-submit {
+            width: 100%;
+            background: var(--accent-gradient);
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(0, 86, 255, 0.25);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            margin-bottom: 24px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(0, 86, 255, 0.45);
+        }
+
+        .btn-submit:active {
+            transform: translateY(0);
+        }
+
+        /* Separator line */
+        .separator {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 12.5px;
+            margin-bottom: 24px;
+        }
+
+        .separator::before, .separator::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .separator:not(:empty)::before {
+            margin-right: 12px;
+        }
+
+        .separator:not(:empty)::after {
+            margin-left: 12px;
+        }
+
+        /* Alternates */
+        .btn-phone-login {
+            width: 100%;
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            padding: 13px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: background-color 0.2s;
+            cursor: pointer;
+        }
+
+        .btn-phone-login:hover {
+            background-color: rgba(255,255,255,0.03);
+        }
+
+        /* Error/Success banners */
+        .alert-banner {
+            padding: 12px 16px;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-bottom: 24px;
+            display: none;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .alert-error {
+            background-color: rgba(239, 83, 80, 0.08);
+            border: 1px solid rgba(239, 83, 80, 0.2);
+            color: #ef5350;
+        }
+
+        .alert-success {
+            background-color: rgba(76, 175, 80, 0.08);
+            border: 1px solid rgba(76, 175, 80, 0.2);
+            color: #4caf50;
+        }
+
+        /* Responsive */
+        @media (max-width: 868px) {
+            .illustration-panel {
+                display: none; /* Hide illustration on mobile/tablet */
+            }
+            .form-panel {
+                flex: 1;
+                padding: 40px 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <!-- Left Panel: Illustration -->
+        <div class="illustration-panel">
+            <img src="assets/auth-illustration.png" alt="TAI Study illustration" class="auth-image">
+            <div class="quote-box">
+                <p class="quote-text">"Learning is a treasure that will follow its owner everywhere."</p>
+                <span class="quote-author">TAI Platform System</span>
+            </div>
+        </div>
+
+        <!-- Right Panel: Login Form -->
+        <div class="form-panel">
+            <div class="form-wrapper">
+                <!-- Top Logo -->
+                <div class="brand-logo-row">
+                    <a href="index.html">
+                        <img src="assets/logo.svg" alt="Tap Academy logo" class="brand-logo">
+                    </a>
+                </div>
+
+                <!-- Title Header -->
+                <div class="form-header">
+                    <h1>Sign In</h1>
+                    <p>Enter your credentials to access the TAI platform.</p>
+                </div>
+
+                <!-- Alert Banners -->
+                <div class="alert-banner alert-error" id="error-alert">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <span id="error-message">Invalid credentials. Please try again.</span>
+                </div>
+                <div class="alert-banner alert-success" id="success-alert">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Login successful! Welcome back, Girish.</span>
+                </div>
+
+                <!-- Form fields -->
+                <form id="login-form">
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <div class="input-wrapper">
+                            <input type="email" id="email" class="input-field" placeholder="name@email.com" required autocomplete="username">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="password">Password</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="password" class="input-field" placeholder="••••••••" required autocomplete="current-password">
+                            <button type="button" class="password-toggle-btn" id="password-toggle" aria-label="Toggle Password Visibility">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="extras-row">
+                        <label class="remember-checkbox">
+                            <input type="checkbox" checked>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-link">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-submit" id="submit-btn">Sign In</button>
+                </form>
+
+                <div class="separator">or</div>
+
+                <button class="btn-phone-login">
+                    <i class="fas fa-phone-alt"></i>
+                    Login with Phone
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script for credentials validation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const loginForm = document.getElementById("login-form");
+            const emailInput = document.getElementById("email");
+            const passwordInput = document.getElementById("password");
+            const errorAlert = document.getElementById("error-alert");
+            const errorMessage = document.getElementById("error-message");
+            const successAlert = document.getElementById("success-alert");
+            const submitBtn = document.getElementById("submit-btn");
+
+            // Password view toggler
+            const passwordToggle = document.getElementById("password-toggle");
+            passwordToggle.addEventListener("click", () => {
+                const icon = passwordToggle.querySelector("i");
+                if (passwordInput.type === "password") {
+                    passwordInput.type = "text";
+                    icon.className = "fas fa-eye-slash";
+                } else {
+                    passwordInput.type = "password";
+                    icon.className = "fas fa-eye";
+                }
+            });
+
+            // Form Submit Actions
+            loginForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                errorAlert.style.display = "none";
+                successAlert.style.display = "none";
+
+                const email = emailInput.value.trim();
+                const password = passwordInput.value;
+
+                // Interactive credentials checking (using generic mock credentials for security)
+                if (email === "student@tapacademy.com" && password === "Password@123") {
+                    successAlert.style.display = "flex";
+                    submitBtn.setAttribute("disabled", "true");
+                    
+                    // Simulate login redirection
+                    setTimeout(() => {
+                        window.location.href = "dashboard.html";
+                    }, 1500);
+                } else {
+                    // Show custom validation error
+                    errorMessage.textContent = "The email or password you entered is incorrect. (Hint: Use student@tapacademy.com / Password@123)";
+                    errorAlert.style.display = "flex";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

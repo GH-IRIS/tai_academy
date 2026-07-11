@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tap Academy TAI Platform Clone - High-fidelity visual mockup of Tap Academy's homepage and training platform.">
+    <title>Tap Academy | TAI Platform Clone</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Fixed Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo-link">
+                <!-- White Logo served locally from assets -->
+                <img src="assets/logo.svg" alt="Tap Academy Logo" class="brand-logo">
+            </a>
+            
+            <!-- Desktop Links -->
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html#home" class="nav-link active">Home</a>
+                <a href="index.html#about" class="nav-link">About TAI</a>
+                
+                <!-- Courses Dropdown -->
+                <div class="nav-dropdown" id="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="java-course.html" class="dropdown-item">
+                            <div class="dropdown-icon-box java-color">
+                                <i class="fab fa-java"></i>
+                            </div>
+                            <div class="dropdown-info">
+                                <span class="dropdown-title">Java Full Stack Developer Course</span>
+                                <span class="dropdown-desc">120-day training in Spring Boot, React & SQL.</span>
+                            </div>
+                        </a>
+                        <a href="python-course.html" class="dropdown-item">
+                            <div class="dropdown-icon-box python-color">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="dropdown-info">
+                                <span class="dropdown-title">Python Full Stack Developer Course</span>
+                                <span class="dropdown-desc">Django, REST APIs & logic building.</span>
+                            </div>
+                        </a>
+                        <a href="data-analytics.html" class="dropdown-item">
+                            <div class="dropdown-icon-box data-color">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="dropdown-info">
+                                <span class="dropdown-title">Data Analytics</span>
+                                <span class="dropdown-desc">Power BI, Excel, SQL & Python data science.</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="placements.html" class="nav-link">Placements</a>
+                <a href="index.html#testimonials" class="nav-link">Reviews</a>
+                <a href="login.html" class="nav-btn-secondary">Student Login</a>
+                <a href="login.html" class="nav-btn-primary">Try TAI For Free</a>
+            </nav>
+
+            <!-- Mobile Hamburger Menu Button -->
+            <button class="mobile-toggle-btn" id="mobile-toggle-btn" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="pill-badge">
+                    <img src="https://www.svgrepo.com/show/398226/rocket.svg" alt="Rocket" class="pill-icon">
+                    <span>AI-Powered Learning Platform</span>
+                </div>
+                <h1 class="hero-title">Unlock Your IT Career with <span class="text-gradient">TAI Platform</span></h1>
+                <p class="hero-desc">
+                    Tap Academy's proprietary AI system combines augmented reality concepts, unlimited placements, and instant doubt resolution to upskill you in Full Stack Development.
+                </p>
+                <div class="hero-actions">
+                    <a href="#courses" class="btn-primary-large">Explore Courses <i class="fas fa-arrow-right"></i></a>
+                    <a href="https://www.youtube.com/embed/YRE8jYq4Nvg?si=kx7yIqh5yuIuqrKE" target="_blank" class="btn-secondary-large">
+                        <i class="fas fa-play-circle"></i> Watch Video Demo
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <!-- Authentic visual illustrating TAI AR study model -->
+                <div class="visual-wrapper">
+                    <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/auth-illustration-Bth3SRxF.png" alt="TAI AR Study Dashboard" class="main-visual-img">
+                    <div class="floating-stat-badge badge-top">
+                        <i class="fas fa-check-circle text-gradient"></i>
+                        <div>
+                            <h4>100% Support</h4>
+                            <p>Unlimited Interviews</p>
+                        </div>
+                    </div>
+                    <div class="floating-stat-badge badge-bottom">
+                        <i class="fas fa-robot text-gradient"></i>
+                        <div>
+                            <h4>AI Tutor Active</h4>
+                            <p>24/7 Doubt Resolution</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placement Marquee Banner -->
+    <div class="marquee-wrapper">
+        <div class="marquee-title">OUR PLACEMENT PARTNERS</div>
+        <div class="marquee-content-container">
+            <div class="marquee-track">
+                <!-- Double set of logos for infinite scroll -->
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/infosys.png" alt="Infosys">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/pwc.png" alt="PwC">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/razorpay.png" alt="Razorpay">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/zoho.png" alt="Zoho">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/kpmg.png" alt="KPMG">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/fujitsu.png" alt="Fujitsu">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/salesforce.png" alt="Salesforce">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/empyra.png" alt="Empyra">
+                <!-- Duplicate for seamless scroll -->
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/infosys.png" alt="Infosys">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/pwc.png" alt="PwC">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/razorpay.png" alt="Razorpay">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/zoho.png" alt="Zoho">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/kpmg.png" alt="KPMG">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/fujitsu.png" alt="Fujitsu">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/salesforce.png" alt="Salesforce">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/empyra.png" alt="Empyra">
+            </div>
+        </div>
+    </div>
+
+    <!-- Placements / Statistics Section -->
+    <section id="stats" class="stats-section">
+        <div class="section-container">
+            <h2 class="section-heading text-center">Transforming Careers Through Visual Learning</h2>
+            <p class="section-subheading text-center">Our metrics show why students trust Tap Academy to launch their tech careers.</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon-circle"><i class="fas fa-graduation-cap"></i></div>
+                    <span class="stat-number" data-target="75000">75,000+</span>
+                    <span class="stat-label">Upskilled Students</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon-circle"><i class="fas fa-handshake"></i></div>
+                    <span class="stat-number" data-target="500">500+</span>
+                    <span class="stat-label">Hiring Partners</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon-circle"><i class="fas fa-briefcase"></i></div>
+                    <span class="stat-number">21 LPA</span>
+                    <span class="stat-label">Highest Package</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon-circle"><i class="fas fa-chart-line"></i></div>
+                    <span class="stat-number">4.8 LPA</span>
+                    <span class="stat-label">Average Package</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TAI Platform Features Section -->
+    <section id="about" class="features-section">
+        <div class="section-container">
+            <h2 class="section-heading text-center">Why TAI is Different</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/problemsolving.jpg" alt="Coding practice" class="feature-img">
+                    <div class="feature-body">
+                        <h3>Gamified Coding Practice</h3>
+                        <p>Complete coding tasks, earn badges, and track your progress in real-time. Practice logic building through customized coding challenges.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/mock-interview.jpg" alt="Mock interviews" class="feature-img">
+                    <div class="feature-body">
+                        <h3>Company-Specific Mock Interviews</h3>
+                        <p>Receive weekly, face-to-face feedback. Practice matching exact interview structures for top product and service-based companies.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/resumeBuilding.jpg" alt="Resume support" class="feature-img">
+                    <div class="feature-body">
+                        <h3>Dynamic Resume Review</h3>
+                        <p>Get your profile optimized for ATS scanners. Highlight key full-stack developer skills and projects that catch recruiters' eyes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Cards Section -->
+    <section id="courses" class="courses-section">
+        <div class="section-container">
+            <h2 class="section-heading text-center">Our Flagship Programs</h2>
+            <p class="section-subheading text-center">Rigorous, placement-driven syllabus designed to take you from absolute beginner to industry professional.</p>
+            
+            <div class="courses-grid">
+                <!-- Course Card 1 -->
+                <div class="course-card">
+                    <div class="course-img-wrapper">
+                        <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/java_full_stack_banner.jpeg" alt="Java Full Stack Developer Course" class="course-img">
+                        <span class="course-badge-overlay">Best Seller</span>
+                    </div>
+                    <div class="course-body">
+                        <h3 class="course-title">Java Full Stack Developer Course</h3>
+                        <p class="course-desc">
+                            Master core backend architectures, database designs, and frontends using Java, Spring Boot, MySQL, React, and integrated AI coding assistants.
+                        </p>
+                        <ul class="course-highlights">
+                            <li><i class="fas fa-check"></i> 120 Days Intensive Training</li>
+                            <li><i class="fas fa-check"></i> 10+ Real-World Live Projects</li>
+                            <li><i class="fas fa-check"></i> Unlimited Interviews</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <a href="java-course.html" class="btn-course-action">Join Program <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Course Card 2 -->
+                <div class="course-card">
+                    <div class="course-img-wrapper">
+                        <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/python_full_stack_banner.jpeg" alt="Python Full Stack Developer Course" class="course-img">
+                    </div>
+                    <div class="course-body">
+                        <h3 class="course-title">Python Full Stack Developer Course</h3>
+                        <p class="course-desc">
+                            Learn logical coding, web scraping, backend frameworks, and database relationships using Python, Django, REST APIs, and React frontend grids.
+                        </p>
+                        <ul class="course-highlights">
+                            <li><i class="fas fa-check"></i> 10 Weeks Hands-On</li>
+                            <li><i class="fas fa-check"></i> Focus on DSA & logic building</li>
+                            <li><i class="fas fa-check"></i> 100% Placement assistance</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <a href="python-course.html" class="btn-course-action">Join Program <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Course Card 3 -->
+                <div class="course-card">
+                    <div class="course-img-wrapper">
+                        <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/data_analytics_banner.jpeg" alt="Data Analytics" class="course-img">
+                    </div>
+                    <div class="course-body">
+                        <h3 class="course-title">Data Analytics</h3>
+                        <p class="course-desc">
+                            Discover data trends, clean databases, and build interactive KPI charts using Advanced Excel, SQL queries, Power BI, Python, and Predictive AI models.
+                        </p>
+                        <ul class="course-highlights">
+                            <li><i class="fas fa-check"></i> Comprehensive math foundation</li>
+                            <li><i class="fas fa-check"></i> 5+ Interactive Dashboards</li>
+                            <li><i class="fas fa-check"></i> Direct placement portal access</li>
+                        </ul>
+                    </div>
+                    <div class="course-footer">
+                        <a href="data-analytics.html" class="btn-course-action">Join Program <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="section-container">
+            <h2 class="section-heading text-center">Placed Student Success Stories</h2>
+            <p class="section-subheading text-center">Read feedback directly from students who unlocked tech roles through the TAI Platform.</p>
+            
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "The AR-based visual training at Tap Academy completely changed how I thought about core coding. Concept mapping logic became very intuitive. The placement team arranged 5 interviews in my first week!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/mani.jpeg" alt="Mani" class="author-avatar">
+                        <div class="author-details">
+                            <h4>Mani S.</h4>
+                            <span>Software Engineer at PWC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "As a non-CS student, learning Java backend frameworks was intimidating. The weekly mock interviews on the TAI platform helped build my confidence to face tough technical rounds. Placed at Infosys!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/saptarshi.jpeg" alt="Saptarshi" class="author-avatar">
+                        <div class="author-details">
+                            <h4>Saptarshi D.</h4>
+                            <span>System Engineer at Infosys</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">
+                        "The LMS portal makes assignments and coding challenges feel like a game. The AI doubt assistant answered my bugs instantly, meaning I didn't get stuck waiting for code reviews. Best training institute in BTM layout!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/sai.jpeg" alt="Sai" class="author-avatar">
+                        <div class="author-details">
+                            <h4>Sai Kumar K.</h4>
+                            <span>Developer at Zoho</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Brand col -->
+                <div class="footer-col-brand">
+                    <img src="assets/logo.svg" alt="Tap Academy Logo" class="footer-logo">
+                    <p class="footer-tagline">Providing quality software engineering training with dedicated placements.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/thetapacademy/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/tapacademy.online" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/tap-academy" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/@TAPACADEMY" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Link col 1 -->
+                <div class="footer-col">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About TAI</a></li>
+                        <li><a href="placements.html">Placements</a></li>
+                        <li><a href="index.html#courses">Courses</a></li>
+                    </ul>
+                </div>
+
+                <!-- Link col 2 -->
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@thetapacademy.com</li>
+                        <li><i class="fas fa-phone"></i> +91 80 1234 5678</li>
+                        <li><i class="fas fa-map-marker-alt"></i> BTM Layout, Bengaluru, Karnataka, India</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tap Academy Clone. All rights reserved.</p>
+                <p class="disclaimer-note">⚠️ Note: This website is an educational clone developed for portfolio demonstration purposes and is not affiliated with or endorsed by Tap Academy.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript script -->
+    <script src="main.js"></script>
+</body>
+</html>

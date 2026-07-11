@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tap Academy Placements - Discover how our students transitioned to top tech companies. View placement packages, companies, and success stories.">
+    <title>Placements | Tap Academy Clone</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Fixed Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="assets/logo.svg" alt="Tap Academy Logo" class="brand-logo">
+            </a>
+            
+            <!-- Desktop Links -->
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About TAI</a>
+                
+                <!-- Courses Dropdown -->
+                <div class="nav-dropdown" id="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="java-course.html" class="dropdown-item">
+                            <div class="dropdown-icon-box java-color">
+                                <i class="fab fa-java"></i>
+                            </div>
+                            <div class="dropdown-info">
+                                <span class="dropdown-title">Java Full Stack Developer Course</span>
+                                <span class="dropdown-desc">120-day training in Spring Boot, React & SQL.</span>
+                            </div>
+                        </a>
+                        <a href="python-course.html" class="dropdown-item">
+                            <div class="dropdown-icon-box python-color">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="dropdown-info">
+                                <span class="dropdown-title">Python Full Stack Developer Course</span>
+                                <span class="dropdown-desc">Django, REST APIs & logic building.</span>
+                            </div>
+                        </a>
+                        <a href="data-analytics.html" class="dropdown-item">
+                            <div class="dropdown-icon-box data-color">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="dropdown-info">
+                                <span class="dropdown-title">Data Analytics</span>
+                                <span class="dropdown-desc">Power BI, Excel, SQL & Python data science.</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="placements.html" class="nav-link active">Placements</a>
+                <a href="index.html#testimonials" class="nav-link">Reviews</a>
+                <a href="login.html" class="nav-btn-secondary">Student Login</a>
+                <a href="login.html" class="nav-btn-primary">Try TAI For Free</a>
+            </nav>
+
+            <!-- Mobile Hamburger Menu Button -->
+            <button class="mobile-toggle-btn" id="mobile-toggle-btn" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Placements Hero Section -->
+    <section class="placements-hero hero-section">
+        <div class="section-container text-center">
+            <div class="pill-badge">
+                <i class="fas fa-briefcase pill-icon"></i>
+                <span>Tap Academy Placement Cell</span>
+            </div>
+            <h1 class="hero-title">Our Placement <span class="text-gradient">Records & Stories</span></h1>
+            <p class="section-subheading text-center" style="margin-bottom: 24px;">
+                We connect skilled students with top global tech organizations. With 500+ hiring partners and unlimited interviews, your tech career starts here.
+            </p>
+            <div class="hero-actions" style="justify-content: center;">
+                <a href="#drives" class="btn-primary-large">View Recent Placements <i class="fas fa-arrow-down"></i></a>
+                <a href="login.html" class="btn-secondary-large">Register for Placements</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placements Statistics Block -->
+    <section class="placements-stats stats-section" style="padding-top: 0;">
+        <div class="section-container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon-circle"><i class="fas fa-arrow-trend-up"></i></div>
+                    <span class="stat-number">21 LPA</span>
+                    <span class="stat-label">Highest Package Offered</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon-circle"><i class="fas fa-calculator"></i></div>
+                    <span class="stat-number">4.8 LPA</span>
+                    <span class="stat-label">Average Placement Package</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon-circle"><i class="fas fa-users-viewfinder"></i></div>
+                    <span class="stat-number" data-target="75000">75,000+</span>
+                    <span class="stat-label">Students Upskilled & Placed</span>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon-circle"><i class="fas fa-building"></i></div>
+                    <span class="stat-number" data-target="500">500+</span>
+                    <span class="stat-label">Active Hiring Partners</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Searchable & Filterable Placed Students Grid -->
+    <section id="drives" class="drives-section" style="padding: 60px 0; background-color: var(--bg-surface);">
+        <div class="section-container">
+            <h2 class="section-heading text-center">Recent Placed Students</h2>
+            <p class="section-subheading text-center">Real students. Real packages. Explore our recent placement records across courses.</p>
+            
+            <!-- Filter Controls -->
+            <div class="placement-filters-container">
+                <div class="search-box-wrapper">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="placement-search" placeholder="Search by name, company, or package...">
+                </div>
+                
+                <div class="filter-buttons" id="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Courses</button>
+                    <button class="filter-btn" data-filter="java">Java Full Stack</button>
+                    <button class="filter-btn" data-filter="python">Python Full Stack</button>
+                    <button class="filter-btn" data-filter="analytics">Data Analytics</button>
+                </div>
+            </div>
+
+            <!-- Placed Students Grid -->
+            <div class="placed-grid" id="placed-grid">
+                <!-- Card 1 -->
+                <div class="placed-card" data-course="java">
+                    <div class="placed-badge-overlay">Java Full Stack</div>
+                    <div class="placed-header">
+                        <div class="placed-avatar-box">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="placed-user-details">
+                            <h3>Mani S.</h3>
+                            <p>Software Engineer</p>
+                        </div>
+                    </div>
+                    <div class="placed-body">
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Placed At</span>
+                            <span class="meta-val font-display"><i class="fas fa-building company-icon"></i> PWC</span>
+                        </div>
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Salary Package</span>
+                            <span class="meta-val package-val">9.0 LPA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="placed-card" data-course="java">
+                    <div class="placed-badge-overlay">Java Full Stack</div>
+                    <div class="placed-header">
+                        <div class="placed-avatar-box">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="placed-user-details">
+                            <h3>Saptarshi D.</h3>
+                            <p>Associate Engineer</p>
+                        </div>
+                    </div>
+                    <div class="placed-body">
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Placed At</span>
+                            <span class="meta-val font-display"><i class="fas fa-building company-icon"></i> Infosys</span>
+                        </div>
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Salary Package</span>
+                            <span class="meta-val package-val">5.0 LPA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="placed-card" data-course="python">
+                    <div class="placed-badge-overlay">Python Full Stack</div>
+                    <div class="placed-header">
+                        <div class="placed-avatar-box">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="placed-user-details">
+                            <h3>Sai Kumar K.</h3>
+                            <p>Software Developer</p>
+                        </div>
+                    </div>
+                    <div class="placed-body">
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Placed At</span>
+                            <span class="meta-val font-display"><i class="fas fa-building company-icon"></i> Zoho</span>
+                        </div>
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Salary Package</span>
+                            <span class="meta-val package-val">6.5 LPA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="placed-card" data-course="analytics">
+                    <div class="placed-badge-overlay">Data Analytics</div>
+                    <div class="placed-header">
+                        <div class="placed-avatar-box">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="placed-user-details">
+                            <h3>Pooja R.</h3>
+                            <p>Data Analyst</p>
+                        </div>
+                    </div>
+                    <div class="placed-body">
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Placed At</span>
+                            <span class="meta-val font-display"><i class="fas fa-building company-icon"></i> Capgemini</span>
+                        </div>
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Salary Package</span>
+                            <span class="meta-val package-val">6.0 LPA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="placed-card" data-course="java">
+                    <div class="placed-badge-overlay">Java Full Stack</div>
+                    <div class="placed-header">
+                        <div class="placed-avatar-box">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="placed-user-details">
+                            <h3>Amit Kumar</h3>
+                            <p>Systems Engineer</p>
+                        </div>
+                    </div>
+                    <div class="placed-body">
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Placed At</span>
+                            <span class="meta-val font-display"><i class="fas fa-building company-icon"></i> TCS</span>
+                        </div>
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Salary Package</span>
+                            <span class="meta-val package-val">4.5 LPA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="placed-card" data-course="python">
+                    <div class="placed-badge-overlay">Python Full Stack</div>
+                    <div class="placed-header">
+                        <div class="placed-avatar-box">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="placed-user-details">
+                            <h3>Deepa M.</h3>
+                            <p>Backend Developer</p>
+                        </div>
+                    </div>
+                    <div class="placed-body">
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Placed At</span>
+                            <span class="meta-val font-display"><i class="fas fa-building company-icon"></i> Tech Mahindra</span>
+                        </div>
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Salary Package</span>
+                            <span class="meta-val package-val">4.8 LPA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="placed-card" data-course="java">
+                    <div class="placed-badge-overlay">Java Full Stack</div>
+                    <div class="placed-header">
+                        <div class="placed-avatar-box">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="placed-user-details">
+                            <h3>Rohan P.</h3>
+                            <p>Full Stack Engineer</p>
+                        </div>
+                    </div>
+                    <div class="placed-body">
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Placed At</span>
+                            <span class="meta-val font-display"><i class="fas fa-building company-icon"></i> Razorpay</span>
+                        </div>
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Salary Package</span>
+                            <span class="meta-val package-val">12.0 LPA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="placed-card" data-course="analytics">
+                    <div class="placed-badge-overlay">Data Analytics</div>
+                    <div class="placed-header">
+                        <div class="placed-avatar-box">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="placed-user-details">
+                            <h3>Sneha J.</h3>
+                            <p>Data Architect</p>
+                        </div>
+                    </div>
+                    <div class="placed-body">
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Placed At</span>
+                            <span class="meta-val font-display"><i class="fas fa-building company-icon"></i> Cognizant</span>
+                        </div>
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Salary Package</span>
+                            <span class="meta-val package-val">5.5 LPA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="placed-card" data-course="java">
+                    <div class="placed-badge-overlay">Java Full Stack</div>
+                    <div class="placed-header">
+                        <div class="placed-avatar-box">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="placed-user-details">
+                            <h3>Kiran W.</h3>
+                            <p>Software Engineer</p>
+                        </div>
+                    </div>
+                    <div class="placed-body">
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Placed At</span>
+                            <span class="meta-val font-display"><i class="fas fa-building company-icon"></i> Wipro</span>
+                        </div>
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Salary Package</span>
+                            <span class="meta-val package-val">4.2 LPA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="placed-card" data-course="python">
+                    <div class="placed-badge-overlay">Python Full Stack</div>
+                    <div class="placed-header">
+                        <div class="placed-avatar-box">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="placed-user-details">
+                            <h3>Divya N.</h3>
+                            <p>Associate Developer</p>
+                        </div>
+                    </div>
+                    <div class="placed-body">
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Placed At</span>
+                            <span class="meta-val font-display"><i class="fas fa-building company-icon"></i> UST Global</span>
+                        </div>
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Salary Package</span>
+                            <span class="meta-val package-val">5.0 LPA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 11 -->
+                <div class="placed-card" data-course="java">
+                    <div class="placed-badge-overlay">Java Full Stack</div>
+                    <div class="placed-header">
+                        <div class="placed-avatar-box">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="placed-user-details">
+                            <h3>Karthik M.</h3>
+                            <p>Analyst Developer</p>
+                        </div>
+                    </div>
+                    <div class="placed-body">
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Placed At</span>
+                            <span class="meta-val font-display"><i class="fas fa-building company-icon"></i> Cognizant</span>
+                        </div>
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Salary Package</span>
+                            <span class="meta-val package-val">4.8 LPA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 12 -->
+                <div class="placed-card" data-course="analytics">
+                    <div class="placed-badge-overlay">Data Analytics</div>
+                    <div class="placed-header">
+                        <div class="placed-avatar-box">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <div class="placed-user-details">
+                            <h3>Meera S.</h3>
+                            <p>Business Analyst</p>
+                        </div>
+                    </div>
+                    <div class="placed-body">
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Placed At</span>
+                            <span class="meta-val font-display"><i class="fas fa-building company-icon"></i> Accenture</span>
+                        </div>
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Salary Package</span>
+                            <span class="meta-val package-val">6.2 LPA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- No Results Message -->
+            <div id="no-results-message" style="display: none; text-align: center; padding: 40px; color: var(--text-secondary);">
+                <i class="fas fa-info-circle" style="font-size: 36px; margin-bottom: 12px; color: var(--accent-cyan);"></i>
+                <p>No students found matching your criteria. Try adjusting your filters or search query.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placement Process Section -->
+    <section class="placement-process-section" style="padding: 60px 0;">
+        <div class="section-container">
+            <h2 class="section-heading text-center">Our Structured Placement Process</h2>
+            <p class="section-subheading text-center">How we guide you step-by-step from training to your first software developer job.</p>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-num font-display">1</div>
+                    <div class="step-content">
+                        <h3>Hands-On Upskilling</h3>
+                        <p>Learn core concepts, complete live coding labs, and build production-grade web applications under expert guidance.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-num font-display">2</div>
+                    <div class="step-content">
+                        <h3>Employability Screening</h3>
+                        <p>Complete our internal assessments testing coding logic, structures, databases, and general technical aptitude.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-num font-display">3</div>
+                    <div class="step-content">
+                        <h3>Resume & Portfolio Polish</h3>
+                        <p>Get personalized feedback to optimize your developer portfolio and resume for automated ATS scanners.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-num font-display">4</div>
+                    <div class="step-content">
+                        <h3>Mock Technical Panels</h3>
+                        <p>Participate in weekly 1-on-1 mock technical interviews mapping the exact loops of major tech companies.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-num font-display">5</div>
+                    <div class="step-content">
+                        <h3>Direct Recruitment Drives</h3>
+                        <p>Access exclusive off-campus and on-campus recruitment opportunities arranged by our placement cell.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Infinite Scrolling Logos (re-used) -->
+    <div class="marquee-wrapper" style="margin-bottom: 0;">
+        <div class="marquee-title">THEY HIRE FROM TAP ACADEMY</div>
+        <div class="marquee-content-container">
+            <div class="marquee-track">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/infosys.png" alt="Infosys">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/pwc.png" alt="PwC">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/razorpay.png" alt="Razorpay">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/zoho.png" alt="Zoho">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/kpmg.png" alt="KPMG">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/fujitsu.png" alt="Fujitsu">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/salesforce.png" alt="Salesforce">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/empyra.png" alt="Empyra">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/infosys.png" alt="Infosys">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/pwc.png" alt="PwC">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/razorpay.png" alt="Razorpay">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/zoho.png" alt="Zoho">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/kpmg.png" alt="KPMG">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/fujitsu.png" alt="Fujitsu">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/salesforce.png" alt="Salesforce">
+                <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/empyra.png" alt="Empyra">
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action Banner -->
+    <section class="cta-banner" style="background: linear-gradient(135deg, rgba(0,86,255,0.15) 0%, rgba(0,225,255,0.05) 100%); padding: 80px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+        <div class="section-container text-center">
+            <h2 class="section-heading">Ready to Launch Your IT Career?</h2>
+            <p class="section-subheading" style="margin-bottom: 28px;">Join our placement-driven courses today and get access to unlimited mock interviews and job drives.</p>
+            <a href="login.html" class="btn-primary-large">Get Started Now <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="footer" style="margin-top: 0;">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Brand col -->
+                <div class="footer-col-brand">
+                    <img src="assets/logo.svg" alt="Tap Academy Logo" class="footer-logo">
+                    <p class="footer-tagline">Providing quality software engineering training with dedicated placements.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/thetapacademy/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/tapacademy.online" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/tap-academy" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/@TAPACADEMY" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Link col 1 -->
+                <div class="footer-col">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About TAI</a></li>
+                        <li><a href="placements.html">Placements</a></li>
+                        <li><a href="index.html#courses">Courses</a></li>
+                    </ul>
+                </div>
+
+                <!-- Link col 2 -->
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@thetapacademy.com</li>
+                        <li><i class="fas fa-phone"></i> +91 80 1234 5678</li>
+                        <li><i class="fas fa-map-marker-alt"></i> BTM Layout, Bengaluru, Karnataka, India</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tap Academy Clone. All rights reserved.</p>
+                <p class="disclaimer-note">⚠️ Note: This website is an educational clone developed for portfolio demonstration purposes and is not affiliated with or endorsed by Tap Academy.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript script -->
+    <script src="main.js"></script>
+</body>
+</html>

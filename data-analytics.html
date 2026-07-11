@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Data Analytics and Visualization Course with AI - Tap Academy. Learn Excel, SQL, Power BI, Python, and Predictive AI models.">
+    <title>Data Analytics Course | Tap Academy Clone</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Top Fixed Navbar -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo-link">
+                <img src="assets/logo.svg" alt="Tap Academy Logo" class="brand-logo">
+            </a>
+            
+            <!-- Desktop Links -->
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html#home" class="nav-link">Home</a>
+                <a href="index.html#about" class="nav-link">About TAI</a>
+                
+                <!-- Courses Dropdown -->
+                <div class="nav-dropdown" id="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle active" id="dropdown-toggle">Courses <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu" id="dropdown-menu">
+                        <a href="java-course.html" class="dropdown-item">
+                            <div class="dropdown-icon-box java-color">
+                                <i class="fab fa-java"></i>
+                            </div>
+                            <div class="dropdown-info">
+                                <span class="dropdown-title">Java Full Stack Developer Course</span>
+                                <span class="dropdown-desc">120-day training in Spring Boot, React & SQL.</span>
+                            </div>
+                        </a>
+                        <a href="python-course.html" class="dropdown-item">
+                            <div class="dropdown-icon-box python-color">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="dropdown-info">
+                                <span class="dropdown-title">Python Full Stack Developer Course</span>
+                                <span class="dropdown-desc">Django, REST APIs & logic building.</span>
+                            </div>
+                        </a>
+                        <a href="data-analytics.html" class="dropdown-item active-item">
+                            <div class="dropdown-icon-box data-color">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <div class="dropdown-info">
+                                <span class="dropdown-title">Data Analytics</span>
+                                <span class="dropdown-desc">Power BI, Excel, SQL & Python data science.</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="placements.html" class="nav-link">Placements</a>
+                <a href="index.html#testimonials" class="nav-link">Reviews</a>
+                <a href="login.html" class="nav-btn-secondary">Student Login</a>
+                <a href="login.html" class="nav-btn-primary">Try TAI For Free</a>
+            </nav>
+
+            <!-- Mobile Hamburger Menu Button -->
+            <button class="mobile-toggle-btn" id="mobile-toggle-btn" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Course Hero Section -->
+    <section class="course-hero hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="pill-badge data-badge">
+                    <i class="fas fa-chart-pie pill-icon"></i>
+                    <span>Fastest Growing Tech Role</span>
+                </div>
+                <h1 class="hero-title">Data Analytics & <br><span class="text-gradient">Visualization</span></h1>
+                <p class="hero-desc">
+                    Discover data patterns, clean relational databases, build interactive dashboards, and design predictive metrics using Excel, SQL queries, Power BI, Python, and Predictive AI models. Tap into placements across business intelligence fields.
+                </p>
+                <div class="course-specs">
+                    <div class="spec-badge"><i class="fas fa-book-reader"></i> Math Foundation</div>
+                    <div class="spec-badge"><i class="fas fa-chart-line"></i> 5+ Dashboards</div>
+                    <div class="spec-badge"><i class="fas fa-briefcase"></i> Direct Job Portal Access</div>
+                </div>
+                <div class="hero-actions" style="margin-top: 30px;">
+                    <a href="login.html" class="btn-primary-large">Apply Now <i class="fas fa-arrow-right"></i></a>
+                    <a href="#curriculum" class="btn-secondary-large">View Syllabus</a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="visual-wrapper">
+                    <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/data_analytics_banner.jpeg" alt="Data Analytics Illustration" class="main-visual-img" style="border-radius: 16px; border: 1px solid var(--border-color);">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Learned Section -->
+    <section class="tech-learned-section" style="padding: 60px 0; background-color: var(--bg-surface);">
+        <div class="section-container">
+            <h2 class="section-heading text-center">Tech Stack You Will Master</h2>
+            <p class="section-subheading text-center">Develop competencies in data analytics platforms and mathematical logic.</p>
+            
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <i class="fas fa-file-excel excel-text-color"></i>
+                    <h4>Advanced Excel</h4>
+                    <p>Excel formulas, lookups, pivot tools, charts, macros, and basic VBA scripting.</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-database sql-text-color"></i>
+                    <h4>SQL Databases</h4>
+                    <p>Relational entity management, custom queries, joins, aggregations, schemas, database optimizations.</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-chart-column powerbi-text-color"></i>
+                    <h4>Power BI</h4>
+                    <p>DAX scripting, interactive reporting, dashboards, data connections, relationship modeling.</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fab fa-python python-text-color"></i>
+                    <h4>Python Data Science</h4>
+                    <p>Learn core libraries: Pandas, NumPy, and Matplotlib for data processing.</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-calculator math-text-color"></i>
+                    <h4>Statistics & Math</h4>
+                    <p>Descriptive metrics, probability distributions, hypothesis assessments, linear correlations.</p>
+                </div>
+                <div class="tech-card">
+                    <i class="fas fa-robot ai-text-color"></i>
+                    <h4>Predictive AI</h4>
+                    <p>Basic regression analysis, trend forecasting, and clustering using artificial intelligence libraries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Syllabus Section -->
+    <section id="curriculum" class="curriculum-section" style="padding: 80px 0;">
+        <div class="section-container">
+            <h2 class="section-heading text-center">Course Curriculum</h2>
+            <p class="section-subheading text-center">A comprehensive, placement-aligned syllabus divided into logical phases.</p>
+            
+            <div class="accordion-container">
+                <!-- Module 1 -->
+                <div class="accordion-item-custom">
+                    <button class="accordion-header-custom">
+                        <span>Phase 1: Advanced Excel & Data Foundations (Weeks 1-2)</span>
+                        <i class="fas fa-plus accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content-custom">
+                        <p>Master spreadsheet systems. Build data cleaning protocols, calculate complex formulas, and structure basic dashboards.</p>
+                        <ul>
+                            <li>Excel lookup structures (VLOOKUP, HLOOKUP, XLOOKUP)</li>
+                            <li>Pivot tables, custom charts, descriptive formatting</li>
+                            <li>Data cleaning, duplicate filtration, handling missing values</li>
+                            <li>Logical formulas (IF, AND, OR) and string operations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 2 -->
+                <div class="accordion-item-custom">
+                    <button class="accordion-header-custom">
+                        <span>Phase 2: RDBMS & Structured Query Language (Weeks 3-4)</span>
+                        <i class="fas fa-plus accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content-custom">
+                        <p>Learn to interact with corporate data lakes using SQL queries. Write complex joins, subqueries, and grouping logic.</p>
+                        <ul>
+                            <li>Relational database concepts & SQL syntax constructs</li>
+                            <li>Data queries using SELECT, filtering (WHERE, HAVING)</li>
+                            <li>Table relationships, Inner joins, Left/Right joins, Unions</li>
+                            <li>Subqueries, nested queries, aggregation functions (SUM, AVG)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="accordion-item-custom">
+                    <button class="accordion-header-custom">
+                        <span>Phase 3: Power BI Dashboard & Visualizations (Weeks 5-6)</span>
+                        <i class="fas fa-plus accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content-custom">
+                        <p>Learn to design executive dashboards. Map relationships, write DAX calculations, and publish KPI charts.</p>
+                        <ul>
+                            <li>Power Query data importing, cleaning, transformations</li>
+                            <li>Relationship modeling and schema configurations</li>
+                            <li>DAX formulas (Calculated columns, Measures)</li>
+                            <li>Building interactive reports, KPI tracking cards, maps</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="accordion-item-custom">
+                    <button class="accordion-header-custom">
+                        <span>Phase 4: Python Data Science & Predictive AI (Weeks 7-8)</span>
+                        <i class="fas fa-plus accordion-icon"></i>
+                    </button>
+                    <div class="accordion-content-custom">
+                        <p>Write data scripts in Python. Clean large sets using Pandas, visualize trends, and model basic predictive AI regressions.</p>
+                        <ul>
+                            <li>Python scripting basics, Notebook structures</li>
+                            <li>Pandas dataframes, series, indexing, NumPy matrices</li>
+                            <li>Data visualization with Matplotlib and Seaborn libraries</li>
+                            <li>Intro to Predictive modeling, regressions, and forecasting</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Placement Success Stories -->
+    <section class="course-placement-stories" style="padding: 60px 0; background-color: var(--bg-surface);">
+        <div class="section-container">
+            <h2 class="section-heading text-center">Placed Data Analytics Students</h2>
+            <p class="section-subheading text-center">Graduates of our Data Analytics program placed in major product & service companies.</p>
+            
+            <div class="placed-grid">
+                <!-- Pooja R -->
+                <div class="placed-card" data-course="analytics">
+                    <div class="placed-badge-overlay">Data Analytics</div>
+                    <div class="placed-header">
+                        <div class="placed-avatar-box"><i class="fas fa-user-graduate"></i></div>
+                        <div class="placed-user-details">
+                            <h3>Pooja R.</h3>
+                            <p>Data Analyst</p>
+                        </div>
+                    </div>
+                    <div class="placed-body">
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Placed At</span>
+                            <span class="meta-val"><i class="fas fa-building company-icon"></i> Capgemini</span>
+                        </div>
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Salary Package</span>
+                            <span class="meta-val package-val">6.0 LPA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sneha J -->
+                <div class="placed-card" data-course="analytics">
+                    <div class="placed-badge-overlay">Data Analytics</div>
+                    <div class="placed-header">
+                        <div class="placed-avatar-box"><i class="fas fa-user-graduate"></i></div>
+                        <div class="placed-user-details">
+                            <h3>Sneha J.</h3>
+                            <p>Data Architect</p>
+                        </div>
+                    </div>
+                    <div class="placed-body">
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Placed At</span>
+                            <span class="meta-val"><i class="fas fa-building company-icon"></i> Cognizant</span>
+                        </div>
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Salary Package</span>
+                            <span class="meta-val package-val">5.5 LPA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Meera S -->
+                <div class="placed-card" data-course="analytics">
+                    <div class="placed-badge-overlay">Data Analytics</div>
+                    <div class="placed-header">
+                        <div class="placed-avatar-box"><i class="fas fa-user-graduate"></i></div>
+                        <div class="placed-user-details">
+                            <h3>Meera S.</h3>
+                            <p>Business Analyst</p>
+                        </div>
+                    </div>
+                    <div class="placed-body">
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Placed At</span>
+                            <span class="meta-val"><i class="fas fa-building company-icon"></i> Accenture</span>
+                        </div>
+                        <div class="placed-meta-item">
+                            <span class="meta-label">Salary Package</span>
+                            <span class="meta-val package-val">6.2 LPA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <!-- Brand col -->
+                <div class="footer-col-brand">
+                    <img src="assets/logo.svg" alt="Tap Academy Logo" class="footer-logo">
+                    <p class="footer-tagline">Providing quality software engineering training with dedicated placements.</p>
+                    <div class="footer-socials">
+                        <a href="https://www.facebook.com/thetapacademy/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/tapacademy.online" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/tap-academy" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/@TAPACADEMY" target="_blank"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Link col 1 -->
+                <div class="footer-col">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="index.html#about">About TAI</a></li>
+                        <li><a href="placements.html">Placements</a></li>
+                        <li><a href="index.html#courses">Courses</a></li>
+                    </ul>
+                </div>
+
+                <!-- Link col 2 -->
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@thetapacademy.com</li>
+                        <li><i class="fas fa-phone"></i> +91 80 1234 5678</li>
+                        <li><i class="fas fa-map-marker-alt"></i> BTM Layout, Bengaluru, Karnataka, India</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tap Academy Clone. All rights reserved.</p>
+                <p class="disclaimer-note">⚠️ Note: This website is an educational clone developed for portfolio demonstration purposes and is not affiliated with or endorsed by Tap Academy.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript script -->
+    <script src="main.js"></script>
+</body>
+</html>
