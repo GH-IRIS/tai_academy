@@ -2087,6 +2087,23 @@ a {
 .placements-list-wrapper .swiper-button-next {
     right: 10px;
 }
+.placement-slide-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.placed-student-img-card {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+.placed-student-img-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
 .placements-actions {
     margin-top: 40px;
     display: flex;
