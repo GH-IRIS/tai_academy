@@ -3,7 +3,7 @@
 > ⚠️ **Educational clone built for learning purposes only — not affiliated with TAP Academy.**
 > Original site: https://thetapacademy.com
 
-🔗 **Live Demo:** https://GH-IRIS.github.io/tai_academy/ · **Code:** https://github.com/GH-IRIS/tai_academy
+🔗 **Live Demo:** [https://GH-IRIS.github.io/tai_academy/](https://GH-IRIS.github.io/tai_academy/) · **Code:** [https://github.com/GH-IRIS/tai_academy](https://github.com/GH-IRIS/tai_academy)
 
 ## 🎯 Goal
 Recreate the TAP Academy homepage as pixel-close as possible — training my eye for spacing, colors, typography and responsive layout.
@@ -20,7 +20,7 @@ Recreate the TAP Academy homepage as pixel-close as possible — training my eye
 ## 📸 Comparison
 | Original | My clone |
 |----------|----------|
-| ![Original Screenshot](https://picsum.photos/400/300?random=86) | ![My Clone Screenshot](https://picsum.photos/400/300?random=87) |
+| ![Original Site](https://GH-IRIS.github.io/Portfolio/assets/tap_original.png) | ![My Clone](https://GH-IRIS.github.io/Portfolio/assets/tap_clone.png) |
 
 ## 🔍 Hardest part
 Matching the hero spacing and scaling typography appropriately across complex breakpoints while keeping placement graphs perfectly aligned.
@@ -41,7 +41,7 @@ This project was built during my frontend training at **[TAP Academy](https://th
 - 🚀 **Get placed in 60 days** — dedicated placement track with daily placement drives
 - 🥽 **Augmented Reality (AR) classrooms** — concepts you can see, not just read
 - 🎤 **Weekly mock interviews** with real-time feedback
-- 👨🏫 **1-on-1 mentorship** and round-the-clock doubt support
+- 👨‍🏫 **1-on-1 mentorship** and round-the-clock doubt support
 - 💻 Courses in **Java, Python, Full Stack Development, Data Science & AI**
 
 ### ❓ FAQ
