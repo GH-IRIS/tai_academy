@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setupPlatformTabs();
     setupMentorHover();
     setupAdvisorForm();
+    setupPlacementsCarousel();
 });
 
 // Mobile Hamburger Menu Toggler
@@ -326,4 +327,43 @@ function setupAdvisorForm() {
             form.reset();
         });
     }
+}
+
+// Placements Carousel Initialization using Swiper.js
+function setupPlacementsCarousel() {
+    const swiperContainer = document.querySelector(".placements-list-wrapper.swiper");
+    if (!swiperContainer) return;
+
+    new Swiper(".placements-list-wrapper.swiper", {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: true,
+        autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+                spaceBetween: 24,
+            },
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 28,
+            },
+            1200: {
+                slidesPerView: 4,
+                spaceBetween: 28,
+            }
+        }
+    });
 }

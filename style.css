@@ -2053,6 +2053,40 @@ a {
     padding: 80px 0;
     background-color: var(--bg-surface);
 }
+.placements-list-wrapper {
+    padding-bottom: 50px;
+    position: relative;
+    --swiper-theme-color: var(--accent-orange);
+    --swiper-navigation-size: 24px;
+}
+.placements-list-wrapper .swiper-button-prev,
+.placements-list-wrapper .swiper-button-next {
+    background-color: var(--bg-base);
+    color: var(--accent-blue);
+    border: 1px solid var(--border-color);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.placements-list-wrapper .swiper-button-prev:hover,
+.placements-list-wrapper .swiper-button-next:hover {
+    background-color: var(--accent-orange);
+    color: #ffffff;
+    border-color: var(--accent-orange);
+}
+.placements-list-wrapper .swiper-button-prev:after,
+.placements-list-wrapper .swiper-button-next:after {
+    font-size: 16px;
+    font-weight: bold;
+}
+.placements-list-wrapper .swiper-button-prev {
+    left: 10px;
+}
+.placements-list-wrapper .swiper-button-next {
+    right: 10px;
+}
 .placements-actions {
     margin-top: 40px;
     display: flex;

@@ -11,7 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/card-carousel.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </head>
 <body>
     <!-- Top Fixed Navbar -->
@@ -685,10 +687,10 @@ binarySearch(int arr[], int x) {
             <h2 class="section-heading text-center">Recent Placements</h2>
             <p class="section-subheading text-center">Our students are getting placed in top companies</p>
 
-            <div class="placements-list-wrapper">
-                <div class="placed-grid">
+            <div class="placements-list-wrapper swiper">
+                <div class="swiper-wrapper">
                     <!-- Student 1 -->
-                    <div class="placed-card">
+                    <div class="placed-card swiper-slide">
                         <span class="placed-badge-overlay">Java</span>
                         <div class="placed-avatar-img-box">
                             <img src="assets/HSDeepthi.png" alt="Deepthi M" class="placed-student-avatar">
@@ -700,7 +702,7 @@ binarySearch(int arr[], int x) {
                         </div>
                     </div>
                     <!-- Student 2 -->
-                    <div class="placed-card">
+                    <div class="placed-card swiper-slide">
                         <span class="placed-badge-overlay">Java</span>
                         <div class="placed-avatar-img-box">
                             <img src="assets/HSSravani.png" alt="A Sravani" class="placed-student-avatar">
@@ -712,7 +714,7 @@ binarySearch(int arr[], int x) {
                         </div>
                     </div>
                     <!-- Student 3 -->
-                    <div class="placed-card">
+                    <div class="placed-card swiper-slide">
                         <span class="placed-badge-overlay">Java</span>
                         <div class="placed-avatar-img-box">
                             <img src="assets/HSGochi.png" alt="Gochi Yogalakshmi" class="placed-student-avatar">
@@ -724,7 +726,7 @@ binarySearch(int arr[], int x) {
                         </div>
                     </div>
                     <!-- Student 4 -->
-                    <div class="placed-card">
+                    <div class="placed-card swiper-slide">
                         <span class="placed-badge-overlay">Python</span>
                         <div class="placed-avatar-img-box">
                             <img src="assets/HSSanika.png" alt="Sanika S" class="placed-student-avatar">
@@ -736,7 +738,7 @@ binarySearch(int arr[], int x) {
                         </div>
                     </div>
                     <!-- Student 5 -->
-                    <div class="placed-card">
+                    <div class="placed-card swiper-slide">
                         <span class="placed-badge-overlay">Java</span>
                         <div class="placed-avatar-img-box">
                             <img src="assets/HSSairam.png" alt="Sairam M" class="placed-student-avatar">
@@ -748,7 +750,7 @@ binarySearch(int arr[], int x) {
                         </div>
                     </div>
                     <!-- Student 6 -->
-                    <div class="placed-card">
+                    <div class="placed-card swiper-slide">
                         <span class="placed-badge-overlay">Analytics</span>
                         <div class="placed-avatar-img-box">
                             <img src="assets/HSNikhil.png" alt="Nikhil" class="placed-student-avatar">
@@ -760,7 +762,7 @@ binarySearch(int arr[], int x) {
                         </div>
                     </div>
                     <!-- Student 7 -->
-                    <div class="placed-card">
+                    <div class="placed-card swiper-slide">
                         <span class="placed-badge-overlay">Java</span>
                         <div class="placed-avatar-img-box">
                             <img src="assets/HSKarthik.png" alt="Karthik M" class="placed-student-avatar">
@@ -772,6 +774,10 @@ binarySearch(int arr[], int x) {
                         </div>
                     </div>
                 </div>
+                <!-- Swiper pagination and navigation -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
 
             <div class="placements-actions text-center">
