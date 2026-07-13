@@ -2298,3 +2298,107 @@ a {
     text-transform: uppercase;
 }
 
+/* Local Asset Specific Style Enhancements */
+.recognition-logo-wrapper {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+.recognition-logo-wrapper img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.feature-img-card {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mentor-avatar-tag {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid var(--bg-card);
+    transition: transform 0.2s;
+}
+.mentor-avatar-tag img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tool-tag-img {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+.tool-tag-img:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-orange);
+}
+.tool-tag-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.placed-avatar-img-box {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+    margin-bottom: 15px;
+}
+.placed-student-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mentor-detail-card-full {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+.mentor-card-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid var(--border-color);
+}
+.mentor-card-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.mentor-card-text {
+    flex-grow: 1;
+}
+@media (max-width: 480px) {
+    .mentor-detail-card-full {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
