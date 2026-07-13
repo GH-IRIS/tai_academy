@@ -12,6 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setupAdvisorForm();
     setupPlacementsCarousel();
     setupCourseTabs();
+    setupChatbot();
 });
 
 // Mobile Hamburger Menu Toggler
@@ -398,4 +399,118 @@ function setupCourseTabs() {
             });
         });
     });
+}
+
+// Setup Interactive Chatbot Widget
+function setupChatbot() {
+    const chatToggle = document.getElementById("ai-chat-toggle");
+    const chatWindow = document.getElementById("ai-chat-window");
+    const chatClose = document.getElementById("ai-chat-close");
+    const chatInput = document.getElementById("ai-chat-input");
+    const chatSend = document.getElementById("ai-chat-send");
+    const chatBody = document.getElementById("ai-chat-body");
+
+    if (!chatToggle || !chatWindow || !chatClose || !chatInput || !chatSend || !chatBody) return;
+
+    chatToggle.addEventListener("click", () => {
+        chatWindow.classList.toggle("open");
+        if (chatWindow.classList.contains("open")) {
+            chatInput.focus();
+        }
+    });
+
+    chatClose.addEventListener("click", () => {
+        chatWindow.classList.remove("open");
+    });
+
+    // Close on escape key
+    window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+            chatWindow.classList.remove("open");
+        }
+    });
+
+    function sendMessage() {
+        const text = chatInput.value.trim();
+        if (!text) return;
+
+        // Add user message
+        appendMessage(text, "user");
+        chatInput.value = "";
+
+        // Auto-scroll
+        chatBody.scrollTop = chatBody.scrollHeight;
+
+        // Show typing indicator
+        showTypingIndicator();
+
+        // Get bot reply
+        setTimeout(() => {
+            removeTypingIndicator();
+            const reply = getBotReply(text);
+            appendMessage(reply, "bot");
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }, 1200);
+    }
+
+    chatSend.addEventListener("click", sendMessage);
+    chatInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+            sendMessage();
+        }
+    });
+
+    function appendMessage(text, sender) {
+        const msgDiv = document.createElement("div");
+        msgDiv.className = `chat-message ${sender}`;
+        msgDiv.textContent = text;
+        chatBody.appendChild(msgDiv);
+    }
+
+    let typingElement = null;
+
+    function showTypingIndicator() {
+        if (typingElement) return;
+        typingElement = document.createElement("div");
+        typingElement.className = "typing-indicator";
+        typingElement.innerHTML = `
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+            <span class="typing-dot"></span>
+        `;
+        chatBody.appendChild(typingElement);
+        chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function removeTypingIndicator() {
+        if (typingElement) {
+            typingElement.remove();
+            typingElement = null;
+        }
+    }
+
+    function getBotReply(message) {
+        const msg = message.toLowerCase();
+        
+        if (msg.includes("hello") || msg.includes("hi") || msg.includes("hey")) {
+            return "Hello! How can I help you today? Ask me about our courses, placements, or coding doubts!";
+        }
+        if (msg.includes("java")) {
+            return "Our Java Full Stack course covers Java basics, DSA, Spring Boot, React, and SQL. It runs for 120 days and includes unlimited placement drives!";
+        }
+        if (msg.includes("python")) {
+            return "Our Python Full Stack course covers Core & Advanced Python, Django, ReactJS, SQL, and DSA. Great for building web apps and starting a tech career!";
+        }
+        if (msg.includes("placement") || msg.includes("job") || msg.includes("salary")) {
+            return "Tap Academy provides unlimited placement drives with 400+ partner companies. Graduates land packages ranging from ₹5 LPA to ₹16 LPA!";
+        }
+        if (msg.includes("fee") || msg.includes("cost") || msg.includes("price")) {
+            return "We offer flexible pricing options and EMI plans. Request a callback from our advisor using the contact form, and they will share all details!";
+        }
+        if (msg.includes("analytics") || msg.includes("data")) {
+            return "Our Data Analytics course covers Advanced Excel, SQL Databases, Power BI, Python, and Predictive AI modeling. Ideal for aspiring Data Analysts!";
+        }
+        
+        return "That's a great question! I'm here to guide you with any coding doubts or course questions. Feel free to request a callback using our advisor form for detailed enrollment details!";
+    }
 }

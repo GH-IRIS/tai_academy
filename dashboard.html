@@ -434,14 +434,54 @@
             height: 60px;
         }
 
-        /* Floating AI Help Button */
-        .ai-chat-fab {
+        /* Tool Button styling */
+        .tool-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            transition: color 0.2s;
+        }
+        .tool-btn:hover {
+            color: var(--text-primary);
+        }
+
+        .side-btn i {
+            font-size: 20px;
+        }
+
+        .leaderboard-dropdown {
+            background-color: #24263b;
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--text-primary);
+            cursor: pointer;
+            outline: none;
+        }
+
+        /* Floating AI Doubt Assistant Widget */
+        .ai-chat-widget-container {
             position: fixed;
             bottom: 24px;
             right: 24px;
+            z-index: 10000;
+        }
+
+        .ai-chat-fab {
             width: 56px;
             height: 56px;
-            background-color: var(--accent-blue);
+            background: var(--accent-gradient);
             color: #ffffff;
             border-radius: 50%;
             display: flex;
@@ -449,13 +489,214 @@
             justify-content: center;
             box-shadow: 0 8px 24px rgba(0, 86, 255, 0.4);
             font-size: 24px;
-            z-index: 1000;
-            transition: transform 0.2s;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 0;
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .ai-chat-fab:hover {
-            transform: scale(1.05);
+            transform: scale(1.08);
+            box-shadow: 0 12px 28px rgba(0, 86, 255, 0.55);
         }
+
+        /* Chat Window */
+        .ai-chat-window {
+            position: absolute;
+            bottom: 72px;
+            right: 0;
+            width: 350px;
+            height: 480px;
+            background-color: rgba(24, 25, 38, 0.98);
+            backdrop-filter: blur(16px);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.95);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+        }
+
+        .ai-chat-window.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Header */
+        .ai-chat-header {
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .avatar-status {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--accent-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+        .status-dot {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 10px;
+            height: 10px;
+            background-color: #22c55e;
+            border: 2px solid var(--bg-card);
+            border-radius: 50%;
+        }
+
+        .header-info h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .header-info p {
+            font-size: 11px;
+            color: var(--text-secondary);
+        }
+
+        .ai-chat-header .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-secondary);
+            font-size: 18px;
+            cursor: pointer;
+            padding: 4px;
+            transition: color 0.2s;
+        }
+
+        .ai-chat-header .close-btn:hover {
+            color: var(--text-primary);
+        }
+
+        /* Body */
+        .ai-chat-body {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background-color: rgba(9, 10, 16, 0.4);
+        }
+
+        .chat-message {
+            max-width: 80%;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 13.5px;
+            line-height: 1.45;
+        }
+
+        .chat-message.bot {
+            background-color: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border-color);
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+        }
+
+        .chat-message.user {
+            background: var(--accent-gradient);
+            color: #ffffff;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+        }
+
+        /* typing indicator */
+        .typing-indicator {
+            align-self: flex-start;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 10px 14px;
+            display: flex;
+            gap: 4px;
+        }
+
+        .typing-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--text-secondary);
+            border-radius: 50%;
+            animation: typing 1.4s infinite ease-in-out both;
+        }
+
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Footer */
+        .ai-chat-footer {
+            padding: 12px 16px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            gap: 8px;
+            background-color: var(--bg-card);
+        }
+
+        .ai-chat-footer input {
+            flex: 1;
+            background-color: rgba(9, 10, 16, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 10px 14px;
+            color: var(--text-primary);
+            font-size: 13.5px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .ai-chat-footer input:focus {
+            border-color: var(--accent-blue);
+        }
+
+        .ai-chat-footer button {
+            width: 38px;
+            height: 38px;
+            background: var(--accent-gradient);
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.2s;
+        }
+
+        .ai-chat-footer button:hover {
+            opacity: 0.9;
+        }
+
 
         /* Responsive Viewports */
         @media (max-width: 1024px) {
@@ -488,17 +729,17 @@
     <!-- Left Vertical Icon Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-icons">
-            <a href="#" class="side-btn" title="Scanner"><span class="material-symbols-rounded">qr_code_2</span></a>
-            <a href="#" class="side-btn active" title="Home"><span class="material-symbols-rounded">home</span></a>
-            <a href="#" class="side-btn" title="Courses"><span class="material-symbols-rounded">menu_book</span></a>
-            <a href="#" class="side-btn" title="Assignments"><span class="material-symbols-rounded">assignment</span></a>
-            <a href="#" class="side-btn" title="Projects"><span class="material-symbols-rounded">inventory_2</span></a>
-            <a href="#" class="side-btn" title="Assessments"><span class="material-symbols-rounded">fact_check</span></a>
-            <a href="#" class="side-btn" title="Jobs"><span class="material-symbols-rounded">work</span></a>
-            <a href="#" class="side-btn" title="Bookmark"><span class="material-symbols-rounded">bookmark</span></a>
-            <a href="#" class="side-btn" title="Help"><span class="material-symbols-rounded">help</span></a>
-            <a href="#" class="side-btn" title="AI Assistant"><span class="material-symbols-rounded">smart_toy</span></a>
-            <a href="#" class="side-btn" title="Profile"><span class="material-symbols-rounded">person</span></a>
+            <a href="#" class="side-btn" title="Scanner"><i class="fas fa-qrcode"></i></a>
+            <a href="#" class="side-btn active" title="Home"><i class="fas fa-home"></i></a>
+            <a href="#" class="side-btn" title="Courses"><i class="fas fa-book-open"></i></a>
+            <a href="#" class="side-btn" title="Assignments"><i class="fas fa-tasks"></i></a>
+            <a href="#" class="side-btn" title="Projects"><i class="fas fa-folder"></i></a>
+            <a href="#" class="side-btn" title="Assessments"><i class="fas fa-clipboard-check"></i></a>
+            <a href="#" class="side-btn" title="Jobs"><i class="fas fa-briefcase"></i></a>
+            <a href="#" class="side-btn" title="Bookmark"><i class="fas fa-bookmark"></i></a>
+            <a href="#" class="side-btn" title="Help"><i class="fas fa-question-circle"></i></a>
+            <a href="#" class="side-btn" title="AI Assistant"><i class="fas fa-robot"></i></a>
+            <a href="#" class="side-btn" title="Profile"><i class="fas fa-user"></i></a>
         </div>
         
         <div class="sidebar-bottom">
@@ -523,7 +764,7 @@
             <div class="dashboard-card">
                 <div class="card-header-row">
                     <h3 class="card-title">Progress</h3>
-                    <button class="tool-btn" style="color: var(--text-secondary)"><span class="material-symbols-rounded">more_vert</span></button>
+                    <button class="tool-btn" style="color: var(--text-secondary)"><i class="fas fa-ellipsis-v"></i></button>
                 </div>
                 <div class="progress-visual-wrapper">
                     <!-- Concentric Progress Rings -->
@@ -553,7 +794,7 @@
             <div class="dashboard-card">
                 <div class="card-header-row">
                     <h3 class="card-title">Employability Score</h3>
-                    <button class="tool-btn" style="color: var(--text-secondary)"><span class="material-symbols-rounded">more_vert</span></button>
+                    <button class="tool-btn" style="color: var(--text-secondary)"><i class="fas fa-ellipsis-v"></i></button>
                 </div>
                 <div class="gauge-visual-wrapper">
                     <!-- SVG Semicircular Gauge -->
@@ -580,8 +821,8 @@
                         <span class="card-subtitle">Overall Top Performers</span>
                     </div>
                     <div style="display:flex; gap:10px; align-items:center;">
-                        <button class="leaderboard-dropdown">Total <span class="material-symbols-rounded font-size-xs">expand_more</span></button>
-                        <button class="tool-btn" style="color: var(--text-secondary)"><span class="material-symbols-rounded">share</span></button>
+                        <button class="leaderboard-dropdown">Total <i class="fas fa-chevron-down" style="font-size: 11px;"></i></button>
+                        <button class="tool-btn" style="color: var(--text-secondary)"><i class="fas fa-share-alt"></i></button>
                     </div>
                 </div>
                 
@@ -611,8 +852,41 @@
         </div>
     </main>
 
-    <!-- Floating Help Chat Trigger -->
-    <button class="ai-chat-fab" title="AI Doubt Assistant"><span class="material-symbols-rounded">chat</span></button>
+    <!-- Floating AI Doubt Assistant Widget -->
+    <div id="ai-chat-widget" class="ai-chat-widget-container">
+        <!-- Chat FAB Button -->
+        <button id="ai-chat-toggle" class="ai-chat-fab" title="AI Doubt Assistant">
+            <i class="fas fa-robot"></i>
+        </button>
+        
+        <!-- Chat Window Popup -->
+        <div id="ai-chat-window" class="ai-chat-window">
+            <div class="ai-chat-header">
+                <div class="header-info">
+                    <div class="avatar-status">
+                        <i class="fas fa-robot"></i>
+                        <span class="status-dot"></span>
+                    </div>
+                    <div>
+                        <h4>TAI Doubt Assistant</h4>
+                        <p>Active 24/7 • AI Tutor</p>
+                    </div>
+                </div>
+                <button id="ai-chat-close" class="close-btn" title="Close"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="ai-chat-body" id="ai-chat-body">
+                <div class="chat-message bot">
+                    Hi! I'm your TAI AI Tutor. Ask me any coding concept or placement doubt, and I'll help you immediately!
+                </div>
+            </div>
+            
+            <div class="ai-chat-footer">
+                <input type="text" id="ai-chat-input" placeholder="Ask a doubt..." autocomplete="off">
+                <button id="ai-chat-send" title="Send message"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
 
     <!-- Script for gauge simulation -->
     <script>
@@ -649,6 +923,119 @@
                         }
                     }, 20);
                 }, 800);
+            }
+        });
+
+        // Interactive AI Chatbot Widget Logic
+        document.addEventListener("DOMContentLoaded", () => {
+            const chatToggle = document.getElementById("ai-chat-toggle");
+            const chatWindow = document.getElementById("ai-chat-window");
+            const chatClose = document.getElementById("ai-chat-close");
+            const chatInput = document.getElementById("ai-chat-input");
+            const chatSend = document.getElementById("ai-chat-send");
+            const chatBody = document.getElementById("ai-chat-body");
+
+            if (!chatToggle || !chatWindow || !chatClose || !chatInput || !chatSend || !chatBody) return;
+
+            chatToggle.addEventListener("click", () => {
+                chatWindow.classList.toggle("open");
+                if (chatWindow.classList.contains("open")) {
+                    chatInput.focus();
+                }
+            });
+
+            chatClose.addEventListener("click", () => {
+                chatWindow.classList.remove("open");
+            });
+
+            window.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    chatWindow.classList.remove("open");
+                }
+            });
+
+            function sendMessage() {
+                const text = chatInput.value.trim();
+                if (!text) return;
+
+                // Add user message
+                appendMessage(text, "user");
+                chatInput.value = "";
+
+                // Auto-scroll
+                chatBody.scrollTop = chatBody.scrollHeight;
+
+                // Show typing indicator
+                showTypingIndicator();
+
+                // Get bot reply
+                setTimeout(() => {
+                    removeTypingIndicator();
+                    const reply = getBotReply(text);
+                    appendMessage(reply, "bot");
+                    chatBody.scrollTop = chatBody.scrollHeight;
+                }, 1200);
+            }
+
+            chatSend.addEventListener("click", sendMessage);
+            chatInput.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") {
+                    sendMessage();
+                }
+            });
+
+            function appendMessage(text, sender) {
+                const msgDiv = document.createElement("div");
+                msgDiv.className = `chat-message ${sender}`;
+                msgDiv.textContent = text;
+                chatBody.appendChild(msgDiv);
+            }
+
+            let typingElement = null;
+
+            function showTypingIndicator() {
+                if (typingElement) return;
+                typingElement = document.createElement("div");
+                typingElement.className = "typing-indicator";
+                typingElement.innerHTML = `
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                    <span class="typing-dot"></span>
+                `;
+                chatBody.appendChild(typingElement);
+                chatBody.scrollTop = chatBody.scrollHeight;
+            }
+
+            function removeTypingIndicator() {
+                if (typingElement) {
+                    typingElement.remove();
+                    typingElement = null;
+                }
+            }
+
+            function getBotReply(message) {
+                const msg = message.toLowerCase();
+                
+                if (msg.includes("hello") || msg.includes("hi") || msg.includes("hey")) {
+                    return "Hello! How can I help you today? Ask me about our courses, placements, or coding doubts!";
+                }
+                if (msg.includes("java")) {
+                    return "Our Java Full Stack course covers Java basics, DSA, Spring Boot, React, and SQL. It runs for 120 days and includes unlimited placement drives!";
+                }
+                if (msg.includes("python")) {
+                    return "Our Python Full Stack course covers Core & Advanced Python, Django, ReactJS, SQL, and DSA. Great for building web apps and starting a tech career!";
+                }
+                if (msg.includes("placement") || msg.includes("job") || msg.includes("salary")) {
+                    return "Tap Academy provides unlimited placement drives with 400+ partner companies. Graduates land packages ranging from ₹5 LPA to ₹16 LPA!";
+                }
+                if (msg.includes("fee") || msg.includes("cost") || msg.includes("price")) {
+                    return "We offer flexible pricing options and EMI plans. Request a callback from our advisor using the contact form, and they will share all details!";
+                }
+                if (msg.includes("analytics") || msg.includes("data")) {
+                    return "Our Data Analytics course covers Advanced Excel, SQL Databases, Power BI, Python, and Predictive AI modeling. Ideal for aspiring Data Analysts!";
+                }
+                
+                return "That's a great question! I'm here to guide you with any coding doubts or course questions. Feel free to request a callback using our advisor form for detailed enrollment details!";
             }
         });
     </script>

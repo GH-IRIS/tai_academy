@@ -124,26 +124,6 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="hero-visual">
-                <div class="visual-wrapper">
-                    <img src="https://d2hqh62t23qj3u.cloudfront.net/assets/auth-illustration-Bth3SRxF.png" alt="TAI AR Study Dashboard" class="main-visual-img">
-                    <div class="floating-stat-badge badge-top">
-                        <i class="fas fa-check-circle text-gradient"></i>
-                        <div>
-                            <h4>100% Support</h4>
-                            <p>Unlimited Interviews</p>
-                        </div>
-                    </div>
-                    <div class="floating-stat-badge badge-bottom">
-                        <i class="fas fa-robot text-gradient"></i>
-                        <div>
-                            <h4>AI Tutor Active</h4>
-                            <p>24/7 Doubt Resolution</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1074,6 +1054,41 @@ binarySearch(int arr[], int x) {
             </div>
         </div>
     </footer>
+    <!-- Floating AI Doubt Assistant Widget -->
+    <div id="ai-chat-widget" class="ai-chat-widget-container">
+        <!-- Chat FAB Button -->
+        <button id="ai-chat-toggle" class="ai-chat-fab" title="AI Doubt Assistant">
+            <i class="fas fa-robot"></i>
+        </button>
+        
+        <!-- Chat Window Popup -->
+        <div id="ai-chat-window" class="ai-chat-window">
+            <div class="ai-chat-header">
+                <div class="header-info">
+                    <div class="avatar-status">
+                        <i class="fas fa-robot"></i>
+                        <span class="status-dot"></span>
+                    </div>
+                    <div>
+                        <h4>TAI Doubt Assistant</h4>
+                        <p>Active 24/7 • AI Tutor</p>
+                    </div>
+                </div>
+                <button id="ai-chat-close" class="close-btn" title="Close"><i class="fas fa-times"></i></button>
+            </div>
+            
+            <div class="ai-chat-body" id="ai-chat-body">
+                <div class="chat-message bot">
+                    Hi! I'm your TAI AI Tutor. Ask me any coding concept or placement doubt, and I'll help you immediately!
+                </div>
+            </div>
+            
+            <div class="ai-chat-footer">
+                <input type="text" id="ai-chat-input" placeholder="Ask a doubt..." autocomplete="off">
+                <button id="ai-chat-send" title="Send message"><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
 
     <!-- JavaScript script -->
     <script src="main.js"></script>
