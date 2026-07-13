@@ -11,6 +11,7 @@ window.addEventListener("DOMContentLoaded", () => {
     setupMentorHover();
     setupAdvisorForm();
     setupPlacementsCarousel();
+    setupCourseTabs();
 });
 
 // Mobile Hamburger Menu Toggler
@@ -256,7 +257,6 @@ function setupPlatformTabs() {
 // Mentor Hover Profiles
 function setupMentorHover() {
     const avatars = document.querySelectorAll(".mentor-avatar-tag");
-    const displayCard = document.getElementById("mentor-display-card");
 
     const mentorData = {
         "Rohit": {
@@ -285,6 +285,11 @@ function setupMentorHover() {
         avatar.addEventListener("mouseenter", () => {
             const name = avatar.getAttribute("data-mentor");
             const info = mentorData[name];
+            
+            // Find the display card local to the active course slide
+            const activeCard = avatar.closest(".course-detail-card");
+            const displayCard = activeCard ? activeCard.querySelector(".mentor-details-card") : null;
+            
             if (info && displayCard) {
                 displayCard.innerHTML = `
                     <strong>${name}</strong>
@@ -296,8 +301,11 @@ function setupMentorHover() {
         });
 
         avatar.addEventListener("mouseleave", () => {
+            const activeCard = avatar.closest(".course-detail-card");
+            const displayCard = activeCard ? activeCard.querySelector(".mentor-details-card") : null;
             if (displayCard) {
                 displayCard.classList.remove("highlight");
+                displayCard.innerHTML = "Hover over an avatar initials bubble to see their profile details!";
             }
         });
     });
@@ -365,5 +373,29 @@ function setupPlacementsCarousel() {
                 spaceBetween: 28,
             }
         }
+    });
+}
+
+// Course Tabs Switcher logic
+function setupCourseTabs() {
+    const tabBtns = document.querySelectorAll(".course-tab-btn");
+    const cards = document.querySelectorAll(".course-detail-card");
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const target = btn.getAttribute("data-course");
+
+            // Update active tab button visual state
+            tabBtns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            // Show selected course card, hide others
+            cards.forEach(card => {
+                card.classList.remove("active");
+                if (card.getAttribute("id") === `course-card-${target}`) {
+                    card.classList.add("active");
+                }
+            });
+        });
     });
 }

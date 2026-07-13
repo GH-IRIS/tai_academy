@@ -480,152 +480,253 @@ binarySearch(int arr[], int x) {
         <div class="section-container">
             <h2 class="section-heading text-center">Courses Offered</h2>
             <p class="section-subheading text-center">Java Full-Stack &nbsp;|&nbsp; Python Full-Stack &nbsp;|&nbsp; Data Analytics</p>
-            
-            <div class="courses-grid">
+             <!-- Segments/Tabs control to select Course -->
+            <div class="courses-tab-control-wrapper">
+                <button class="course-tab-btn active" data-course="java">Java Full-Stack</button>
+                <button class="course-tab-btn" data-course="python">Python Full-Stack</button>
+                <button class="course-tab-btn" data-course="analytics">Data Analytics</button>
+            </div>
+
+            <div class="course-details-display-area">
+                
                 <!-- Course Card 1: Java Full Stack -->
-                <div class="course-card popular">
-                    <div class="course-img-wrapper">
-                        <img src="assets/java_full_stack_banner.jpeg" alt="Java Full Stack Developer Course" class="course-img">
-                        <span class="course-badge-overlay">Most Popular</span>
-                    </div>
-                    <div class="course-body">
-                        <h3 class="course-title">Java Full-Stack Web Development With AI Program</h3>
-                        <p class="badge-secondary-program">(Job Guarantee)</p>
-                        <p class="course-desc">
-                            Master Java, Spring Boot & React. Build 3+ end-to-end apps and ace product-company interviews and land your dream job.
-                        </p>
-                        <ul class="course-highlights">
-                            <li><i class="fas fa-check"></i> Java Programming Mastery & OOPs</li>
-                            <li><i class="fas fa-check"></i> Advanced Java, JDBC & Hibernate</li>
-                            <li><i class="fas fa-check"></i> Spring Boot Framework & APIs</li>
-                            <li><i class="fas fa-check"></i> Frontend (HTML, CSS, React)</li>
-                            <li><i class="fas fa-check"></i> AI Integration & Tool Suites</li>
-                            <li><i class="fas fa-check"></i> 10 Weeks Intensive Curriculum</li>
-                            <li><i class="fas fa-check"></i> 10 Live Industry Projects</li>
-                            <li><i class="fas fa-check"></i> 500+ Hours of Training</li>
-                            <li><i class="fas fa-check"></i> 24/7 LMS & AI Doubt Access</li>
-                        </ul>
-
-                        <!-- Mentors Hover Box -->
-                        <div class="mentor-hover-container">
-                            <span class="hover-label">Our Expert Mentors (Hover):</span>
-                            <div class="mentor-avatars">
-                                <div class="mentor-avatar-tag" data-mentor="Rohit"><img src="assets/rohitsirexplain.png" alt="R"></div>
-                                <div class="mentor-avatar-tag" data-mentor="Kshitij"><img src="assets/kshitsir.jpg" alt="K"></div>
-                                <div class="mentor-avatar-tag" data-mentor="Somanna M G"><img src="assets/somanaSir.jpg" alt="S"></div>
-                                <div class="mentor-avatar-tag" data-mentor="Harshith"><img src="assets/harshithMentor.JPG" alt="H"></div>
-                                <div class="mentor-avatar-tag" data-mentor="Ravi"><img src="assets/raviMentor.JPG" alt="Ra"></div>
+                <div class="course-detail-card active" id="course-card-java">
+                    <div class="course-detail-content-wrapper">
+                        <!-- Left Column: Details -->
+                        <div class="course-detail-left-col">
+                            <div class="course-header-row">
+                                <span class="course-badge-overlay-v2">Most Popular</span>
+                                <h3 class="course-title-v2">Java Full-Stack Web Development With AI Program</h3>
+                                <p class="badge-secondary-program-v2">(Job Guarantee Program)</p>
                             </div>
-                            <div class="mentor-details-card" id="mentor-display-card">
-                                Hover over a initials bubble to see their profile details!
+                            <p class="course-desc-v2">
+                                Master Java, Spring Boot & React. Build 3+ end-to-end apps and ace product-company interviews to land your dream job.
+                            </p>
+                            <ul class="course-highlights-v2">
+                                <li><i class="fas fa-check-circle"></i> Java Programming Mastery & OOPs</li>
+                                <li><i class="fas fa-check-circle"></i> Advanced Java, JDBC & Hibernate</li>
+                                <li><i class="fas fa-check-circle"></i> Spring Boot Framework & APIs</li>
+                                <li><i class="fas fa-check-circle"></i> Frontend (HTML, CSS, React)</li>
+                                <li><i class="fas fa-check-circle"></i> AI Integration & Tool Suites</li>
+                                <li><i class="fas fa-check-circle"></i> 10 Weeks Intensive Curriculum</li>
+                                <li><i class="fas fa-check-circle"></i> 10 Live Industry Projects</li>
+                                <li><i class="fas fa-check-circle"></i> 500+ Hours of Training</li>
+                                <li><i class="fas fa-check-circle"></i> 24/7 LMS & AI Doubt Access</li>
+                            </ul>
+                            
+                            <!-- Mentors Hover Box -->
+                            <div class="mentor-hover-container-v2">
+                                <span class="hover-label-v2">Our Expert Mentors (Hover):</span>
+                                <div class="mentor-avatars-v2">
+                                    <div class="mentor-avatar-tag" data-mentor="Rohit"><img src="assets/rohitsirexplain.png" alt="R"></div>
+                                    <div class="mentor-avatar-tag" data-mentor="Kshitij"><img src="assets/kshitsir.jpg" alt="K"></div>
+                                    <div class="mentor-avatar-tag" data-mentor="Somanna M G"><img src="assets/somanaSir.jpg" alt="S"></div>
+                                    <div class="mentor-avatar-tag" data-mentor="Harshith"><img src="assets/harshithMentor.JPG" alt="H"></div>
+                                    <div class="mentor-avatar-tag" data-mentor="Ravi"><img src="assets/raviMentor.JPG" alt="Ra"></div>
+                                </div>
+                                <div class="mentor-details-card">
+                                    Hover over an avatar initials bubble to see their profile details!
+                                </div>
+                            </div>
+
+                            <!-- Batch Timeline details -->
+                            <div class="batch-timeline-card-v2">
+                                <p><i class="fas fa-calendar-alt"></i> <strong>Next Batch Starts:</strong> Jul 13, 2026</p>
+                                <p class="seats-alert-v2"><i class="fas fa-chair"></i> Only 17 seats left!</p>
+                                <p><i class="fas fa-laptop-house"></i> Online & Offline batches</p>
+                                <p><i class="fas fa-clock"></i> Time: 10:00 AM</p>
+                            </div>
+
+                            <div class="course-footer-v2">
+                                <a href="#career-advisor" class="btn-course-action-v2 primary">Book Free Demo</a>
+                                <a href="java-course.html" class="btn-course-action-v2 outline">Download Syllabus</a>
+                                <a href="java-course.html" class="btn-course-action-v2 text-link">View Full Details</a>
                             </div>
                         </div>
 
-                        <!-- Batch Timeline details -->
-                        <div class="batch-timeline-card">
-                            <p><i class="fas fa-calendar-alt"></i> <strong>Next Batch Starts:</strong> Jul 13, 2026</p>
-                            <p class="seats-alert"><i class="fas fa-chair"></i> Only 17 seats left!</p>
-                            <p><i class="fas fa-laptop-house"></i> Online & Offline batches available</p>
-                            <p><i class="fas fa-clock"></i> Time: 10:00 AM</p>
+                        <!-- Right Column: Visual Banner -->
+                        <div class="course-detail-right-col">
+                            <div class="course-banner-img-box">
+                                <img src="assets/java_full_stack_banner.jpeg" alt="Java Full Stack Developer Course" class="course-banner-img">
+                            </div>
+                            <div class="course-banner-desc-box">
+                                <h4>Master Java & Spring Boot Stack</h4>
+                                <p>Build enterprise grade APIs, microservices, and reactive user interfaces that recruiters love.</p>
+                            </div>
+                            <!-- Tech tools preview -->
+                            <div class="tools-preview-strip-v2">
+                                <h4>Master Industry Tools:</h4>
+                                <div class="tools-grid-icons-v2">
+                                    <span class="tool-tag-img" title="Java"><img src="assets/java.png" alt="Java"></span>
+                                    <span class="tool-tag-img" title="Spring Boot"><img src="assets/spring.svg" alt="Spring"></span>
+                                    <span class="tool-tag-img" title="Hibernate"><img src="assets/Hibernate.svg" alt="Hibernate"></span>
+                                    <span class="tool-tag-img" title="MySQL"><img src="assets/mysql.svg" alt="MySQL"></span>
+                                    <span class="tool-tag-img" title="JavaScript"><img src="assets/javascript.png" alt="JS"></span>
+                                    <span class="tool-tag-img" title="HTML"><img src="assets/html.webp" alt="HTML"></span>
+                                    <span class="tool-tag-img" title="CSS"><img src="assets/css.svg" alt="CSS"></span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-
-                    <!-- Tech tools preview -->
-                    <div class="tools-preview-strip">
-                        <h4>Master Industry Tools:</h4>
-                        <div class="tools-grid-icons">
-                            <span class="tool-tag-img" title="Java"><img src="assets/java.png" alt="Java"></span>
-                            <span class="tool-tag-img" title="Spring Boot"><img src="assets/spring.svg" alt="Spring"></span>
-                            <span class="tool-tag-img" title="Hibernate"><img src="assets/Hibernate.svg" alt="Hibernate"></span>
-                            <span class="tool-tag-img" title="MySQL"><img src="assets/mysql.svg" alt="MySQL"></span>
-                            <span class="tool-tag-img" title="JavaScript"><img src="assets/javascript.png" alt="JS"></span>
-                            <span class="tool-tag-img" title="HTML"><img src="assets/html.webp" alt="HTML"></span>
-                            <span class="tool-tag-img" title="CSS"><img src="assets/css.svg" alt="CSS"></span>
-                            <span class="tool-tag-img" title="VS Code"><img src="assets/vscode.png" alt="VS Code"></span>
-                            <span class="tool-tag-img" title="Claude"><img src="assets/claudeLogo.png" alt="Claude"></span>
-                            <span class="tool-tag-img" title="ChatGPT"><img src="assets/chatgptlogo.svg" alt="ChatGPT"></span>
-                            <span class="tool-tag-img" title="Cursor"><img src="assets/cursorlogo.png" alt="Cursor"></span>
-                            <span class="tool-tag-img" title="Github Copilot"><img src="assets/githubcopilot.png" alt="Copilot"></span>
-                            <span class="tool-tag-img" title="Bolt"><img src="assets/Boltlogo.jpg" alt="Bolt"></span>
-                            <span class="tool-tag-img" title="V0"><img src="assets/v0logo.webp" alt="V0"></span>
-                            <span class="tool-tag-img" title="Lovable"><img src="assets/lovablelogo.png" alt="Lovable"></span>
-                            <span class="tool-tag-img" title="Windsurf"><img src="assets/windsurf.svg" alt="Windsurf"></span>
-                        </div>
-                    </div>
-
-                    <div class="course-footer">
-                        <a href="#career-advisor" class="btn-course-action primary">Book Free Demo</a>
-                        <a href="java-course.html" class="btn-course-action outline">Download Syllabus</a>
-                        <a href="java-course.html" class="btn-course-action text-link">View Full Details</a>
                     </div>
                 </div>
 
                 <!-- Course Card 2: Python Full Stack -->
-                <div class="course-card">
-                    <div class="course-img-wrapper">
-                        <img src="assets/python_full_stack_banner.jpeg" alt="Python Full Stack Developer Course" class="course-img">
-                    </div>
-                    <div class="course-body">
-                        <h3 class="course-title">Python Full-Stack Web Development Program</h3>
-                        <p class="course-desc">
-                            Learn logical coding, web scraping, backend frameworks, and database relationships using Python, Django, REST APIs, and React frontend grids.
-                        </p>
-                        <ul class="course-highlights">
-                            <li><i class="fas fa-check"></i> Python Basics & OOPs Concepts</li>
-                            <li><i class="fas fa-check"></i> Django MVC & REST APIs</li>
-                            <li><i class="fas fa-check"></i> Web Scraping & SQL Databases</li>
-                            <li><i class="fas fa-check"></i> React JS Frontends</li>
-                            <li><i class="fas fa-check"></i> Focus on DSA & Logic Building</li>
-                            <li><i class="fas fa-check"></i> 10 Weeks Hands-On</li>
-                            <li><i class="fas fa-check"></i> 8 Live Projects</li>
-                            <li><i class="fas fa-check"></i> 400+ Hours of Training</li>
-                            <li><i class="fas fa-check"></i> 100% Placement Assistance</li>
-                        </ul>
+                <div class="course-detail-card" id="course-card-python">
+                    <div class="course-detail-content-wrapper">
+                        <!-- Left Column: Details -->
+                        <div class="course-detail-left-col">
+                            <div class="course-header-row">
+                                <span class="course-badge-overlay-v2">Job Guarantee</span>
+                                <h3 class="course-title-v2">Python Full-Stack Web Development Program</h3>
+                                <p class="badge-secondary-program-v2">(Job Guarantee Program)</p>
+                            </div>
+                            <p class="course-desc-v2">
+                                Learn logical coding, web scraping, backend frameworks, and database relationships using Python, Django, REST APIs, and React frontend grids.
+                            </p>
+                            <ul class="course-highlights-v2">
+                                <li><i class="fas fa-check-circle"></i> Python Basics & OOPs Concepts</li>
+                                <li><i class="fas fa-check-circle"></i> Django MVC & REST APIs</li>
+                                <li><i class="fas fa-check-circle"></i> Web Scraping & SQL Databases</li>
+                                <li><i class="fas fa-check-circle"></i> React JS Frontends</li>
+                                <li><i class="fas fa-check-circle"></i> Focus on DSA & Logic Building</li>
+                                <li><i class="fas fa-check-circle"></i> 10 Weeks Hands-On</li>
+                                <li><i class="fas fa-check-circle"></i> 8 Live Projects</li>
+                                <li><i class="fas fa-check-circle"></i> 400+ Hours of Training</li>
+                                <li><i class="fas fa-check-circle"></i> 100% Placement Assistance</li>
+                            </ul>
 
-                        <div class="batch-timeline-card">
-                            <p><i class="fas fa-calendar-alt"></i> <strong>Next Batch:</strong> Jul 20, 2026</p>
-                            <p><i class="fas fa-laptop-house"></i> Online & Offline Options</p>
+                            <!-- Mentors Hover Box -->
+                            <div class="mentor-hover-container-v2">
+                                <span class="hover-label-v2">Our Expert Mentors (Hover):</span>
+                                <div class="mentor-avatars-v2">
+                                    <div class="mentor-avatar-tag" data-mentor="Kshitij"><img src="assets/kshitsir.jpg" alt="K"></div>
+                                    <div class="mentor-avatar-tag" data-mentor="Rohit"><img src="assets/rohitsirexplain.png" alt="R"></div>
+                                    <div class="mentor-avatar-tag" data-mentor="Somanna M G"><img src="assets/somanaSir.jpg" alt="S"></div>
+                                    <div class="mentor-avatar-tag" data-mentor="Harshith"><img src="assets/harshithMentor.JPG" alt="H"></div>
+                                    <div class="mentor-avatar-tag" data-mentor="Ravi"><img src="assets/raviMentor.JPG" alt="Ra"></div>
+                                </div>
+                                <div class="mentor-details-card">
+                                    Hover over an avatar initials bubble to see their profile details!
+                                </div>
+                            </div>
+
+                            <!-- Batch Timeline details -->
+                            <div class="batch-timeline-card-v2">
+                                <p><i class="fas fa-calendar-alt"></i> <strong>Next Batch Starts:</strong> Jul 20, 2026</p>
+                                <p class="seats-alert-v2"><i class="fas fa-chair"></i> Only 12 seats left!</p>
+                                <p><i class="fas fa-laptop-house"></i> Online & Offline Options</p>
+                                <p><i class="fas fa-clock"></i> Time: 10:00 AM</p>
+                            </div>
+
+                            <div class="course-footer-v2">
+                                <a href="#career-advisor" class="btn-course-action-v2 primary">Book Free Demo</a>
+                                <a href="python-course.html" class="btn-course-action-v2 outline">Download Syllabus</a>
+                                <a href="python-course.html" class="btn-course-action-v2 text-link">View Full Details</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="course-footer">
-                        <a href="#career-advisor" class="btn-course-action primary">Book Free Demo</a>
-                        <a href="python-course.html" class="btn-course-action outline">Download Syllabus</a>
+
+                        <!-- Right Column: Visual Banner -->
+                        <div class="course-detail-right-col">
+                            <div class="course-banner-img-box">
+                                <img src="assets/python_full_stack_banner.jpeg" alt="Python Full Stack Developer Course" class="course-banner-img">
+                            </div>
+                            <div class="course-banner-desc-box">
+                                <h4>Master AI-Native Python Stack</h4>
+                                <p>Build modern apps with the Python frameworks and AI tools recruiters love.</p>
+                            </div>
+                            <!-- Tech tools preview -->
+                            <div class="tools-preview-strip-v2">
+                                <h4>Master Industry Tools:</h4>
+                                <div class="tools-grid-icons-v2">
+                                    <span class="tool-tag-img" title="Python"><img src="assets/javascript.png" alt="Python"></span>
+                                    <span class="tool-tag-img" title="MySQL"><img src="assets/mysql.svg" alt="MySQL"></span>
+                                    <span class="tool-tag-img" title="JavaScript"><img src="assets/javascript.png" alt="JS"></span>
+                                    <span class="tool-tag-img" title="HTML"><img src="assets/html.webp" alt="HTML"></span>
+                                    <span class="tool-tag-img" title="CSS"><img src="assets/css.svg" alt="CSS"></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Course Card 3: Data Analytics -->
-                <div class="course-card">
-                    <div class="course-img-wrapper">
-                        <img src="assets/data_analytics_banner.jpeg" alt="Data Analytics" class="course-img">
-                    </div>
-                    <div class="course-body">
-                        <h3 class="course-title">Data Analytics Program</h3>
-                        <p class="course-desc">
-                            Discover data trends, clean databases, and build interactive KPI charts using Advanced Excel, SQL queries, Power BI, Python, and Predictive AI models.
-                        </p>
-                        <ul class="course-highlights">
-                            <li><i class="fas fa-check"></i> Advanced Excel Formulae & Pivot Charts</li>
-                            <li><i class="fas fa-check"></i> SQL Queries & Database Optimization</li>
-                            <li><i class="fas fa-check"></i> Power BI & Interactive KPIs</li>
-                            <li><i class="fas fa-check"></i> Python Data Science (Pandas, Numpy)</li>
-                            <li><i class="fas fa-check"></i> Comprehensive Math & Stats Foundation</li>
-                            <li><i class="fas fa-check"></i> 8 Weeks Syllabus</li>
-                            <li><i class="fas fa-check"></i> 5+ Live Dashboards</li>
-                            <li><i class="fas fa-check"></i> Resume Optimization</li>
-                            <li><i class="fas fa-check"></i> Direct Placement Portal Access</li>
-                        </ul>
+                <div class="course-detail-card" id="course-card-analytics">
+                    <div class="course-detail-content-wrapper">
+                        <!-- Left Column: Details -->
+                        <div class="course-detail-left-col">
+                            <div class="course-header-row">
+                                <span class="course-badge-overlay-v2">Job Oriented</span>
+                                <h3 class="course-title-v2">Data Analytics Program</h3>
+                                <p class="badge-secondary-program-v2">(Professional Certification)</p>
+                            </div>
+                            <p class="course-desc-v2">
+                                Discover data trends, clean databases, and build interactive KPI charts using Advanced Excel, SQL queries, Power BI, Python, and Predictive AI models.
+                            </p>
+                            <ul class="course-highlights-v2">
+                                <li><i class="fas fa-check-circle"></i> Advanced Excel Formulae & Pivot Charts</li>
+                                <li><i class="fas fa-check-circle"></i> SQL Queries & Database Optimization</li>
+                                <li><i class="fas fa-check-circle"></i> Power BI & Interactive KPIs</li>
+                                <li><i class="fas fa-check-circle"></i> Python Data Science (Pandas, Numpy)</li>
+                                <li><i class="fas fa-check-circle"></i> Comprehensive Math & Stats Foundation</li>
+                                <li><i class="fas fa-check-circle"></i> 8 Weeks Syllabus</li>
+                                <li><i class="fas fa-check-circle"></i> 5+ Live Dashboards</li>
+                                <li><i class="fas fa-check-circle"></i> Resume Optimization</li>
+                                <li><i class="fas fa-check-circle"></i> Direct Placement Portal Access</li>
+                            </ul>
 
-                        <div class="batch-timeline-card">
-                            <p><i class="fas fa-calendar-alt"></i> <strong>Next Batch:</strong> Jul 27, 2026</p>
-                            <p><i class="fas fa-laptop-house"></i> Online & Offline Options</p>
+                            <!-- Mentors Hover Box -->
+                            <div class="mentor-hover-container-v2">
+                                <span class="hover-label-v2">Our Expert Mentors (Hover):</span>
+                                <div class="mentor-avatars-v2">
+                                    <div class="mentor-avatar-tag" data-mentor="Somanna M G"><img src="assets/somanaSir.jpg" alt="S"></div>
+                                    <div class="mentor-avatar-tag" data-mentor="Rohit"><img src="assets/rohitsirexplain.png" alt="R"></div>
+                                    <div class="mentor-avatar-tag" data-mentor="Kshitij"><img src="assets/kshitsir.jpg" alt="K"></div>
+                                    <div class="mentor-avatar-tag" data-mentor="Ravi"><img src="assets/raviMentor.JPG" alt="Ra"></div>
+                                </div>
+                                <div class="mentor-details-card">
+                                    Hover over an avatar initials bubble to see their profile details!
+                                </div>
+                            </div>
+
+                            <!-- Batch Timeline details -->
+                            <div class="batch-timeline-card-v2">
+                                <p><i class="fas fa-calendar-alt"></i> <strong>Next Batch Starts:</strong> Jul 27, 2026</p>
+                                <p class="seats-alert-v2"><i class="fas fa-chair"></i> Only 15 seats left!</p>
+                                <p><i class="fas fa-laptop-house"></i> Classroom & Online modes</p>
+                                <p><i class="fas fa-clock"></i> Time: 11:30 AM</p>
+                            </div>
+
+                            <div class="course-footer-v2">
+                                <a href="#career-advisor" class="btn-course-action-v2 primary">Book Free Demo</a>
+                                <a href="data-analytics.html" class="btn-course-action-v2 outline">Download Syllabus</a>
+                                <a href="data-analytics.html" class="btn-course-action-v2 text-link">View Full Details</a>
+                            </div>
+                        </div>
+
+                        <!-- Right Column: Visual Banner -->
+                        <div class="course-detail-right-col">
+                            <div class="course-banner-img-box">
+                                <img src="assets/data_analytics_banner.jpeg" alt="Data Analytics" class="course-banner-img">
+                            </div>
+                            <div class="course-banner-desc-box">
+                                <h4>Master Data & Visual Analytics</h4>
+                                <p>Transform raw business datasets into insights with advanced models and visual Power BI dashboards.</p>
+                            </div>
+                            <!-- Tech tools preview -->
+                            <div class="tools-preview-strip-v2">
+                                <h4>Master Industry Tools:</h4>
+                                <div class="tools-grid-icons-v2">
+                                    <span class="tool-tag-img" title="MySQL"><img src="assets/mysql.svg" alt="MySQL"></span>
+                                    <span class="tool-tag-img" title="JavaScript"><img src="assets/javascript.png" alt="JS"></span>
+                                    <span class="tool-tag-img" title="HTML"><img src="assets/html.webp" alt="HTML"></span>
+                                    <span class="tool-tag-img" title="CSS"><img src="assets/css.svg" alt="CSS"></span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="course-footer">
-                        <a href="#career-advisor" class="btn-course-action primary">Book Free Demo</a>
-                        <a href="data-analytics.html" class="btn-course-action outline">Download Syllabus</a>
-                    </div>
                 </div>
-            </div>
+
+            </div>      </div>
         </div>
     </section>
 
