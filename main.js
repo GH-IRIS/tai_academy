@@ -7,6 +7,9 @@ window.addEventListener("DOMContentLoaded", () => {
     setupCoursesDropdown();
     setupSyllabusAccordions();
     setupPlacementFilters();
+    setupPlatformTabs();
+    setupMentorHover();
+    setupAdvisorForm();
 });
 
 // Mobile Hamburger Menu Toggler
@@ -71,7 +74,6 @@ function setupStatsCounter() {
 function animateCount(element, target) {
     let start = 0;
     const duration = 2000; // 2 seconds
-    const stepTime = Math.abs(Math.floor(duration / target));
     
     // Adjust steps for large numbers (like 75,000) so it finishes in 2 seconds
     const increment = Math.max(1, Math.floor(target / 100)); 
@@ -97,7 +99,7 @@ function setupActiveScrollLinks() {
 
         sections.forEach(section => {
             const sectionTop = section.offsetTop - 120;
-            if (pageYOffset >= sectionTop) {
+            if (window.pageYOffset >= sectionTop) {
                 currentSectionId = section.getAttribute("id");
             }
         });
@@ -174,9 +176,9 @@ function setupPlacementFilters() {
         
         placedCards.forEach(card => {
             const courseType = card.getAttribute("data-course");
-            const studentName = card.querySelector(".placed-user-details h3").textContent.toLowerCase();
-            const companyName = card.querySelector(".placed-meta-item:first-of-type .meta-val").textContent.toLowerCase();
-            const packageVal = card.querySelector(".placed-meta-item:last-of-type .meta-val").textContent.toLowerCase();
+            const studentName = card.querySelector(".placed-user-details h3") ? card.querySelector(".placed-user-details h3").textContent.toLowerCase() : "";
+            const companyName = card.querySelector(".placed-meta-item:first-of-type .meta-val") ? card.querySelector(".placed-meta-item:first-of-type .meta-val").textContent.toLowerCase() : "";
+            const packageVal = card.querySelector(".placed-meta-item:last-of-type .meta-val") ? card.querySelector(".placed-meta-item:last-of-type .meta-val").textContent.toLowerCase() : "";
             
             const matchesFilter = activeFilter === "all" || courseType === activeFilter;
             const matchesSearch = studentName.includes(searchQuery) || 
@@ -196,10 +198,12 @@ function setupPlacementFilters() {
         });
 
         // Toggle no results feedback message
-        if (visibleCount === 0) {
-            noResultsMessage.style.display = "block";
-        } else {
-            noResultsMessage.style.display = "none";
+        if (noResultsMessage) {
+            if (visibleCount === 0) {
+                noResultsMessage.style.display = "block";
+            } else {
+                noResultsMessage.style.display = "none";
+            }
         }
     }
 
@@ -224,3 +228,102 @@ function setupPlacementFilters() {
     });
 }
 
+// TAI Platform Tab Switching Logic
+function setupPlatformTabs() {
+    const tabBtns = document.querySelectorAll(".tab-btn");
+    const panels = document.querySelectorAll(".tab-panel");
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const target = btn.getAttribute("data-tab");
+
+            // Update active button
+            tabBtns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            // Update active panel
+            panels.forEach(panel => {
+                panel.classList.remove("active");
+                if (panel.getAttribute("id") === `tab-${target}`) {
+                    panel.classList.add("active");
+                }
+            });
+        });
+    });
+}
+
+// Mentor Hover Profiles
+function setupMentorHover() {
+    const avatars = document.querySelectorAll(".mentor-avatar-tag");
+    const displayCard = document.getElementById("mentor-display-card");
+
+    const mentorData = {
+        "Rohit": {
+            role: "Senior Full-Stack Architect",
+            desc: "12+ years building enterprise Java systems. Formerly Tech Lead at IBM, specializes in Spring Security, microservices, and system design."
+        },
+        "Kshitij": {
+            role: "Lead Python Architect",
+            desc: "Expert in Django, REST APIs, and core DSA logic structures. Guides students through competitive coding paradigms."
+        },
+        "Somanna M G": {
+            role: "Head of Data Science",
+            desc: "Mathematical modeling and advanced analytics veteran. Specializes in SQL optimizations, Excel dashboards, and Power BI KPIs."
+        },
+        "Harshith": {
+            role: "Frontend Lead & UI Expert",
+            desc: "React.js developer focusing on clean state management, visual responsive components, and UI/UX micro-interactions."
+        },
+        "Ravi": {
+            role: "Senior Placement Lead",
+            desc: "10+ years coordinating with corporate HRs, optimizing resumes, and directing mock technical and HR interviews."
+        }
+    };
+
+    avatars.forEach(avatar => {
+        avatar.addEventListener("mouseenter", () => {
+            const name = avatar.getAttribute("data-mentor");
+            const info = mentorData[name];
+            if (info && displayCard) {
+                displayCard.innerHTML = `
+                    <strong>${name}</strong>
+                    <span style="display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--accent-blue); margin-top: 2px;">${info.role}</span>
+                    <p style="margin-top: 6px; font-size: 12px; line-height: 1.4; color: var(--text-secondary);">${info.desc}</p>
+                `;
+                displayCard.classList.add("highlight");
+            }
+        });
+
+        avatar.addEventListener("mouseleave", () => {
+            if (displayCard) {
+                displayCard.classList.remove("highlight");
+            }
+        });
+    });
+}
+
+// Advisor form feedback
+function setupAdvisorForm() {
+    const form = document.getElementById("advisor-form");
+    const feedback = document.getElementById("form-feedback-message");
+
+    if (form && feedback) {
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById("username").value;
+            const phone = document.getElementById("userphone").value;
+            
+            // Basic 10-digit validation
+            if (!/^\d{10}$/.test(phone)) {
+                feedback.style.color = "#dc2626";
+                feedback.textContent = "❌ Please enter a valid 10-digit phone number.";
+                return;
+            }
+
+            feedback.style.color = "#16a34a";
+            feedback.innerHTML = `🎉 Thank you, <strong>${name}</strong>! Your callback request is confirmed. Our advisor will reach out to you within 24 hours.`;
+            form.reset();
+        });
+    }
+}
