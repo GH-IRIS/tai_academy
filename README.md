@@ -22,7 +22,7 @@ Recreate the TAP Academy homepage as pixel-close as possible — training my eye
 ## 📸 Comparison
 | Original | My clone |
 |----------|----------|
-| ![Original Site](https://GH-IRIS.github.io/Portfolio/assets/tap_clone.png) | ![My Clone]() |
+| ![Original Site](assets/tap_original.png) | ![My Clone](assets/tap_clone.png) |
 
 ## 🔍 Hardest part
 Matching the hero spacing and scaling typography appropriately across complex breakpoints while keeping placement graphs perfectly aligned.
